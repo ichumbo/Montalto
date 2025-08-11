@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frotas & Tarifas - Montalvo</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/frotas-tarifas.css">
+  <link rel="stylesheet" href="./assets/css/reserva.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.png" class="w-135" class="w-135" alt="Montalvo Logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="./index.html" class="navbar-link">Início</a></li>
+          <li><a href="./quem-somos.html" class="navbar-link">Quem Somos</a></li>
+          <li><a href="./frotas-tarifas.html" class="navbar-link active">Frotas</a></li>
+          <li><a href="./seminovos.html" class="navbar-link">Seminovos</a></li>
+          <li><a href="./oportunidades.html" class="navbar-link">Oportunidades</a></li>
+          <li><a href="./contato.html" class="navbar-link">Contato</a></li>
+          <li><a href="./reserva.html" class="navbar-link">Reserva</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO FROTAS -->
+    <section class="hero-frotas">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">
+              <ion-icon name="calendar-outline"></ion-icon>
+              Desde 1985
+            </span>
+          <h1 class="hero-title">Nossa Completa</h1>
+          <p class="hero-subtitle">Descubra nossa ampla seleção de veículos para todas as ocasiões</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- FROTA GRID -->
+    <section class="frota-grid">
+      <div class="container">
+        <div class="grid-header">
+          <h2 class="section-title">Escolha seu Veículo</h2>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">
+              <ion-icon name="grid-outline"></ion-icon>
+            </button>
+            <button class="view-btn" data-view="list">
+              <ion-icon name="list-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="vehicles-grid" id="vehicles-container">
+          <!-- Categoria Econômico -->
+          <div class="vehicle-card" data-category="economico">
+            <div class="card-badge">Econômico</div>
+            <div class="card-image">
+              <img src="./assets/images/car-1.jpg" alt="Chevrolet Onix">
+              <div class="card-overlay">
+                <button class="btn-quick-view">Ver Detalhes</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Chevrolet Onix</h3>
+              <div class="card-specs">
+                <span><ion-icon name="people-outline"></ion-icon>5 pessoas</span>
+                <span><ion-icon name="bag-outline"></ion-icon>2 malas</span>
+                <span><ion-icon name="speedometer-outline"></ion-icon>Manual</span>
+                <span><ion-icon name="leaf-outline"></ion-icon>Flex</span>
+              </div>
+              <div class="card-price">
+                <span class="price-label">A partir de</span>
+                <span class="price-value">R$ 89<small>/dia</small></span>
+              </div>
+              <button class="btn-reserve">Reservar Agora</button>
+            </div>
+          </div>
+
+          <!-- Categoria Intermediário -->
+          <div class="vehicle-card" data-category="intermediario">
+            <div class="card-badge">Intermediário</div>
+            <div class="card-image">
+              <img src="./assets/images/car-2.jpg" alt="Volkswagen Virtus">
+              <div class="card-overlay">
+                <button class="btn-quick-view">Ver Detalhes</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Volkswagen Virtus</h3>
+              <div class="card-specs">
+                <span><ion-icon name="people-outline"></ion-icon>5 pessoas</span>
+                <span><ion-icon name="bag-outline"></ion-icon>3 malas</span>
+                <span><ion-icon name="speedometer-outline"></ion-icon>Automático</span>
+                <span><ion-icon name="leaf-outline"></ion-icon>Flex</span>
+              </div>
+              <div class="card-price">
+                <span class="price-label">A partir de</span>
+                <span class="price-value">R$ 129<small>/dia</small></span>
+              </div>
+              <button class="btn-reserve">Reservar Agora</button>
+            </div>
+          </div>
+
+          <!-- Categoria Executivo -->
+          <div class="vehicle-card" data-category="executivo">
+            <div class="card-badge">Executivo</div>
+            <div class="card-image">
+              <img src="./assets/images/car-3.jpg" alt="Toyota Corolla">
+              <div class="card-overlay">
+                <button class="btn-quick-view">Ver Detalhes</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Toyota Corolla</h3>
+              <div class="card-specs">
+                <span><ion-icon name="people-outline"></ion-icon>5 pessoas</span>
+                <span><ion-icon name="bag-outline"></ion-icon>3 malas</span>
+                <span><ion-icon name="speedometer-outline"></ion-icon>CVT</span>
+                <span><ion-icon name="flash-outline"></ion-icon>Híbrido</span>
+              </div>
+              <div class="card-price">
+                <span class="price-label">A partir de</span>
+                <span class="price-value">R$ 189<small>/dia</small></span>
+              </div>
+              <button class="btn-reserve">Reservar Agora</button>
+            </div>
+          </div>
+
+          <!-- Categoria SUV -->
+          <div class="vehicle-card" data-category="suv">
+            <div class="card-badge">SUV</div>
+            <div class="card-image">
+              <img src="./assets/images/car-4.jpg" alt="Honda HR-V">
+              <div class="card-overlay">
+                <button class="btn-quick-view">Ver Detalhes</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Honda HR-V</h3>
+              <div class="card-specs">
+                <span><ion-icon name="people-outline"></ion-icon>5 pessoas</span>
+                <span><ion-icon name="bag-outline"></ion-icon>4 malas</span>
+                <span><ion-icon name="speedometer-outline"></ion-icon>CVT</span>
+                <span><ion-icon name="leaf-outline"></ion-icon>Flex</span>
+              </div>
+              <div class="card-price">
+                <span class="price-label">A partir de</span>
+                <span class="price-value">R$ 219<small>/dia</small></span>
+              </div>
+              <button class="btn-reserve">Reservar Agora</button>
+            </div>
+          </div>
+
+          <!-- Categoria Premium -->
+          <div class="vehicle-card" data-category="premium">
+            <div class="card-badge premium">Premium</div>
+            <div class="card-image">
+              <img src="./assets/images/car-5.jpg" alt="BMW 320i">
+              <div class="card-overlay">
+                <button class="btn-quick-view">Ver Detalhes</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">BMW 320i</h3>
+              <div class="card-specs">
+                <span><ion-icon name="people-outline"></ion-icon>5 pessoas</span>
+                <span><ion-icon name="bag-outline"></ion-icon>3 malas</span>
+                <span><ion-icon name="speedometer-outline"></ion-icon>Automático</span>
+                <span><ion-icon name="flash-outline"></ion-icon>Turbo</span>
+              </div>
+              <div class="card-price">
+                <span class="price-label">A partir de</span>
+                <span class="price-value">R$ 349<small>/dia</small></span>
+              </div>
+              <button class="btn-reserve">Reservar Agora</button>
+            </div>
+          </div>
+
+          <!-- Mais veículos -->
+          <div class="vehicle-card" data-category="suv">
+            <div class="card-badge">SUV</div>
+            <div class="card-image">
+              <img src="./assets/images/car-6.jpg" alt="Jeep Compass">
+              <div class="card-overlay">
+                <button class="btn-quick-view">Ver Detalhes</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Jeep Compass</h3>
+              <div class="card-specs">
+                <span><ion-icon name="people-outline"></ion-icon>5 pessoas</span>
+                <span><ion-icon name="bag-outline"></ion-icon>5 malas</span>
+                <span><ion-icon name="speedometer-outline"></ion-icon>Automático</span>
+                <span><ion-icon name="leaf-outline"></ion-icon>Flex</span>
+              </div>
+              <div class="card-price">
+                <span class="price-label">A partir de</span>
+                <span class="price-value">R$ 259<small>/dia</small></span>
+              </div>
+              <button class="btn-reserve">Reservar Agora</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFAS ESPECIAIS -->
+    <section class="tarifas-especiais">
+      <div class="container">
+        <h2 class="section-title center">Tarifas Especiais</h2>
+        <div class="tarifas-grid">
+          <div class="tarifa-card">
+            <div class="tarifa-icon">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <h3>Diária Semanal</h3>
+            <p>Alugue por 7 dias e ganhe desconto especial em toda nossa frota</p>
+            <div class="desconto">15% OFF</div>
+          </div>
+          <div class="tarifa-card">
+            <div class="tarifa-icon">
+              <ion-icon name="business-outline"></ion-icon>
+            </div>
+            <h3>Corporativo</h3>
+            <p>Condições especiais para empresas com gestão completa de frotas</p>
+            <div class="desconto">20% OFF</div>
+          </div>
+          <div class="tarifa-card">
+            <div class="tarifa-icon">
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+            <h3>Fidelidade</h3>
+            <p>Benefícios exclusivos para clientes frequentes e programa de pontos</p>
+            <div class="desconto">Até 25% OFF</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Encontrou o veículo ideal?</h2>
+          <p>Reserve agora e garante as melhores condições para sua viagem</p>
+          <div class="cta-buttons">
+            <a href="./reserva.html" class="btn-primary">
+              <ion-icon name="car"></ion-icon>
+              Fazer Reserva
+            </a>
+            <a href="./contato.html" class="btn-secondary">
+              <ion-icon name="call"></ion-icon>
+              Falar Conosco
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" class="w-135" class="w-135" alt="Montalvo Logo">
+          </a>
+
+          <p class="footer-text">
+            Pesquise carros de aluguel baratos em Nova York. Com uma frota diversificada de 19.000 veículos, a Waydex oferece aos seus
+            consumidores um
+            seleção atraente e divertida.
+          </p>
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Empresa</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Sobre nós</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Planos de preços</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Nosso blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contatos</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Apoiar</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Centro de ajuda</a>
+          </li>
+
+        </ul>
+
+       
+      </div>
+
+      <div class="footer-bottom">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-skype"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <p class="copyright">
+          &copy; 2023 <a href="#">iChumbo</a>. Todos os direitos reservados
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/frotas-tarifas.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Montalvo</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/contato.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" class="w-135" alt="Montalvo Logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="./index.html" class="navbar-link">Início</a></li>
+          <li><a href="./quem-somos.html" class="navbar-link">Quem Somos</a></li>
+          <li><a href="./frotas-tarifas.html" class="navbar-link">Frotas</a></li>
+          <li><a href="./seminovos.html" class="navbar-link">Seminovos</a></li>
+          <li><a href="./oportunidades.html" class="navbar-link">Oportunidades</a></li>
+          <li><a href="./contato.html" class="navbar-link active">Contato</a></li>
+          <li><a href="./reserva.html" class="navbar-link">Reserva</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- HERO CONTATO -->
+      <section class="hero-contato">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge">
+              <ion-icon name="call-outline"></ion-icon>
+              Contato
+            </span>
+            <h1 class="hero-title">
+              Entre em <span class="highlight">Contato</span>
+            </h1>
+            <p class="hero-text">
+              Estamos prontos para atender você. Fale conosco através dos nossos canais de comunicação.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFORMAÇÕES DE CONTATO -->
+      <section class="info-contato">
+        <div class="container">
+          <div class="contato-grid">
+            
+            <div class="contato-card">
+              <div class="card-icon">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Telefone</h3>
+              <div class="card-info">
+                <p><strong>Matriz:</strong> (11) 3456-7890</p>
+                <p><strong>WhatsApp:</strong> (11) 99999-8888</p>
+                <p><strong>Emergência 24h:</strong> (11) 98765-4321</p>
+              </div>
+              <a href="tel:+551134567890" class="btn-contato">
+                <ion-icon name="call-outline"></ion-icon>
+                Ligar Agora
+              </a>
+            </div>
+
+            <div class="contato-card">
+              <div class="card-icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">E-mail</h3>
+              <div class="card-info">
+                <p><strong>Geral:</strong> contato@montalvo.com.br</p>
+                <p><strong>Vendas:</strong> vendas@montalvo.com.br</p>
+                <p><strong>Suporte:</strong> suporte@montalvo.com.br</p>
+              </div>
+              <a href="mailto:contato@montalvo.com.br" class="btn-contato">
+                <ion-icon name="mail-outline"></ion-icon>
+                Enviar E-mail
+              </a>
+            </div>
+
+            <div class="contato-card">
+              <div class="card-icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Endereço</h3>
+              <div class="card-info">
+                <p><strong>Matriz:</strong></p>
+                <p>Rua das Flores, 123</p>
+                <p>Centro - São Paulo/SP</p>
+                <p>CEP: 01234-567</p>
+              </div>
+              <a href="https://maps.google.com" target="_blank" class="btn-contato">
+                <ion-icon name="navigate-outline"></ion-icon>
+                Ver no Mapa
+              </a>
+            </div>
+
+            <div class="contato-card">
+              <div class="card-icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Horário de Funcionamento</h3>
+              <div class="card-info">
+                <p><strong>Segunda a Sexta:</strong> 08h às 18h</p>
+                <p><strong>Sábado:</strong> 08h às 14h</p>
+                <p><strong>Domingo:</strong> Fechado</p>
+                <p><strong>Emergência:</strong> 24h</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULÁRIO DE CONTATO -->
+      <section class="formulario-contato">
+        <div class="container">
+          <div class="form-container">
+            <h2 class="section-title">Envie sua Mensagem</h2>
+            <p class="form-subtitle">Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+            
+            <form class="contato-form">
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="nome">Nome Completo</label>
+                  <input type="text" id="nome" name="nome" required>
+                  <div class="input-icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" name="email" required>
+                  <div class="input-icon">
+                    <ion-icon name="mail-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="telefone">Telefone</label>
+                  <input type="tel" id="telefone" name="telefone" required>
+                  <div class="input-icon">
+                    <ion-icon name="call-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="assunto">Assunto</label>
+                  <select id="assunto" name="assunto" required>
+                    <option value="">Selecione um assunto</option>
+                    <option value="locacao">Locação de Veículos</option>
+                    <option value="seminovos">Seminovos</option>
+                    <option value="suporte">Suporte Técnico</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="outros">Outros</option>
+                  </select>
+                  <div class="input-icon">
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <div class="input-group full-width">
+                  <label for="mensagem">Mensagem</label>
+                  <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem aqui..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-enviar">
+                <ion-icon name="send-outline"></ion-icon>
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAPA -->
+      <section class="mapa-section">
+        <div class="container">
+          <h2 class="section-title">Nossa Localização</h2>
+          <div class="mapa-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6333824!3d-23.5505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjkiUyA0NsKwMzgnMDAuMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Quais documentos preciso para alugar um carro?</h3>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>Para alugar um veículo você precisa apresentar: CNH válida (categoria B ou superior), documento de identidade (RG ou CNH), CPF e cartão de crédito no nome do locatário.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Qual a idade mínima para locação?</h3>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>A idade mínima é de 21 anos e é necessário ter CNH há pelo menos 2 anos. Para condutores entre 21 e 25 anos, pode haver taxa adicional.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Posso devolver o carro em local diferente?</h3>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>Sim, oferecemos o serviço de devolução em local diferente mediante taxa adicional. Consulte nossa equipe para verificar disponibilidade.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>O seguro está incluso na locação?</h3>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>Todos os nossos veículos possuem seguro básico incluso. Oferecemos também opções de seguro completo com cobertura ampliada.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Posso cancelar minha reserva?</h3>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>Sim, você pode cancelar sua reserva até 24 horas antes da data de retirada sem custos adicionais. Cancelamentos com menos de 24h podem ter taxa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" class="w-135" class="w-135" alt="Montalvo Logo">
+          </a>
+          <p class="footer-text">
+            Estamos sempre prontos para atender você. Entre em contato conosco através 
+            dos nossos canais de comunicação e tire todas as suas dúvidas.
+          </p>
+        </div>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Contato</p></li>
+          <li><a href="tel:+551134567890" class="footer-link">(11) 3456-7890</a></li>
+          <li><a href="mailto:contato@montalvo.com.br" class="footer-link">contato@montalvo.com.br</a></li>
+          <li><a href="#" class="footer-link">Rua das Flores, 123</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Horários</p></li>
+          <li><a href="#" class="footer-link">Seg-Sex: 08h às 18h</a></li>
+          <li><a href="#" class="footer-link">Sáb: 08h às 14h</a></li>
+          <li><a href="#" class="footer-link">Emergência: 24h</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+        </ul>
+        <p class="copyright">&copy; 2023 <a href="#">Montalvo</a>. Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/contato.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

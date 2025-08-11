@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva - Montalvo</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/reserva.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" class="w-135" alt="Montalvo Logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="./index.html" class="navbar-link">Início</a></li>
+          <li><a href="./quem-somos.html" class="navbar-link">Quem Somos</a></li>
+          <li><a href="./frotas-tarifas.html" class="navbar-link">Frotas</a></li>
+          <li><a href="./seminovos.html" class="navbar-link">Seminovos</a></li>
+          <li><a href="./oportunidades.html" class="navbar-link">Oportunidades</a></li>
+          <li><a href="./contato.html" class="navbar-link">Contato</a></li>
+          <li><a href="./reserva.html" class="navbar-link active">Reserva</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- HERO RESERVA -->
+      <section class="hero-reserva">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <ion-icon name="car-sport-outline"></ion-icon>
+              Reserve Online
+            </div>
+            <h1 class="hero-title">
+              Reserve seu <span class="highlight">veículo ideal</span>
+            </h1>
+            <p class="hero-text">
+              Processo simples e rápido para garantir o carro perfeito para sua viagem
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULÁRIO DE RESERVA -->
+      <section class="reserva-form-section">
+        <div class="container">
+          <div class="form-container">
+            <div class="form-header">
+              <h2 class="section-title">Complete sua Reserva</h2>
+              <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                  <div class="step-number">1</div>
+                  <span>Dados</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                  <div class="step-number">2</div>
+                  <span>Veículo</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                  <div class="step-number">3</div>
+                  <span>Confirmação</span>
+                </div>
+              </div>
+            </div>
+
+            <form class="reserva-form" id="reservaForm">
+              
+              <!-- STEP 1: DADOS PESSOAIS -->
+              <div class="form-step active" data-step="1">
+                <div class="step-content">
+                  <h3 class="step-title">Seus Dados</h3>
+                  
+                  <div class="form-grid">
+                    <div class="input-group">
+                      <label for="nome">Nome Completo</label>
+                      <input type="text" id="nome" name="nome" required>
+                      <div class="input-icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="email">E-mail</label>
+                      <input type="email" id="email" name="email" required>
+                      <div class="input-icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="telefone">Telefone</label>
+                      <input type="tel" id="telefone" name="telefone" required>
+                      <div class="input-icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="cpf">CPF</label>
+                      <input type="text" id="cpf" name="cpf" required>
+                      <div class="input-icon">
+                        <ion-icon name="card-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                      <label for="endereco">Endereço</label>
+                      <input type="text" id="endereco" name="endereco" required>
+                      <div class="input-icon">
+                        <ion-icon name="location-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="dataRetirada">Data de Retirada</label>
+                      <input type="date" id="dataRetirada" name="dataRetirada" required>
+                      <div class="input-icon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="dataDevolucao">Data de Devolução</label>
+                      <input type="date" id="dataDevolucao" name="dataDevolucao" required>
+                      <div class="input-icon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 2: SELEÇÃO DE VEÍCULO -->
+              <div class="form-step" data-step="2">
+                <div class="step-content">
+                  <h3 class="step-title">Escolha seu Veículo</h3>
+                  
+                  <div class="vehicle-grid">
+                    <div class="vehicle-card" data-vehicle="economico">
+                      <div class="vehicle-image">
+                        <img src="./assets/images/car-1.jpg" alt="Carro Econômico">
+                      </div>
+                      <div class="vehicle-info">
+                        <h4>Econômico</h4>
+                        <p>Ideal para cidade</p>
+                        <div class="vehicle-features">
+                          <span><ion-icon name="people-outline"></ion-icon> 4 pessoas</span>
+                          <span><ion-icon name="bag-outline"></ion-icon> 2 malas</span>
+                        </div>
+                        <div class="vehicle-price">R$ 89/dia</div>
+                      </div>
+                      <input type="radio" name="veiculo" value="economico" id="economico">
+                    </div>
+
+                    <div class="vehicle-card" data-vehicle="intermediario">
+                      <div class="vehicle-image">
+                        <img src="./assets/images/car-2.jpg" alt="Carro Intermediário">
+                      </div>
+                      <div class="vehicle-info">
+                        <h4>Intermediário</h4>
+                        <p>Conforto e economia</p>
+                        <div class="vehicle-features">
+                          <span><ion-icon name="people-outline"></ion-icon> 5 pessoas</span>
+                          <span><ion-icon name="bag-outline"></ion-icon> 3 malas</span>
+                        </div>
+                        <div class="vehicle-price">R$ 129/dia</div>
+                      </div>
+                      <input type="radio" name="veiculo" value="intermediario" id="intermediario">
+                    </div>
+
+                    <div class="vehicle-card" data-vehicle="premium">
+                      <div class="vehicle-image">
+                        <img src="./assets/images/car-3.jpg" alt="Carro Premium">
+                      </div>
+                      <div class="vehicle-info">
+                        <h4>Premium</h4>
+                        <p>Máximo conforto</p>
+                        <div class="vehicle-features">
+                          <span><ion-icon name="people-outline"></ion-icon> 5 pessoas</span>
+                          <span><ion-icon name="bag-outline"></ion-icon> 4 malas</span>
+                        </div>
+                        <div class="vehicle-price">R$ 189/dia</div>
+                      </div>
+                      <input type="radio" name="veiculo" value="premium" id="premium">
+                    </div>
+                  </div>
+
+                  <div class="extras-section">
+                    <h4>Extras Opcionais</h4>
+                    <div class="extras-grid">
+                      <label class="extra-item">
+                        <input type="checkbox" name="extras" value="gps">
+                        <div class="extra-content">
+                          <ion-icon name="navigate-outline"></ion-icon>
+                          <span>GPS</span>
+                          <small>+R$ 15/dia</small>
+                        </div>
+                      </label>
+
+                      <label class="extra-item">
+                        <input type="checkbox" name="extras" value="cadeirinha">
+                        <div class="extra-content">
+                          <ion-icon name="accessibility-outline"></ion-icon>
+                          <span>Cadeirinha</span>
+                          <small>+R$ 20/dia</small>
+                        </div>
+                      </label>
+
+                      <label class="extra-item">
+                        <input type="checkbox" name="extras" value="seguro">
+                        <div class="extra-content">
+                          <ion-icon name="shield-checkmark-outline"></ion-icon>
+                          <span>Seguro Total</span>
+                          <small>+R$ 35/dia</small>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: CONFIRMAÇÃO -->
+              <div class="form-step" data-step="3">
+                <div class="step-content">
+                  <h3 class="step-title">Confirmação da Reserva</h3>
+                  
+                  <div class="confirmation-summary">
+                    <div class="summary-card">
+                      <h4>Resumo da Reserva</h4>
+                      <div class="summary-item">
+                        <span>Cliente:</span>
+                        <span id="summaryNome">-</span>
+                      </div>
+                      <div class="summary-item">
+                        <span>Período:</span>
+                        <span id="summaryPeriodo">-</span>
+                      </div>
+                      <div class="summary-item">
+                        <span>Veículo:</span>
+                        <span id="summaryVeiculo">-</span>
+                      </div>
+                      <div class="summary-item">
+                        <span>Extras:</span>
+                        <span id="summaryExtras">Nenhum</span>
+                      </div>
+                      <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="summaryTotal">R$ 0,00</span>
+                      </div>
+                    </div>
+
+                    <div class="payment-methods">
+                      <h4>Forma de Pagamento</h4>
+                      <div class="payment-options">
+                        <label class="payment-option">
+                          <input type="radio" name="pagamento" value="cartao" required>
+                          <div class="payment-content">
+                            <ion-icon name="card-outline"></ion-icon>
+                            <span>Cartão de Crédito</span>
+                          </div>
+                        </label>
+                        <label class="payment-option">
+                          <input type="radio" name="pagamento" value="pix" required>
+                          <div class="payment-content">
+                            <ion-icon name="qr-code-outline"></ion-icon>
+                            <span>PIX</span>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NAVIGATION BUTTONS -->
+              <div class="form-navigation">
+                <button type="button" class="btn-nav btn-prev" id="prevBtn" style="display: none;">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                  Anterior
+                </button>
+                <button type="button" class="btn-nav btn-next" id="nextBtn">
+                  Próximo
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+                <button type="submit" class="btn-nav btn-submit" id="submitBtn" style="display: none;">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                  Confirmar Reserva
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" class="w-135" alt="Montalvo Logo">
+          </a>
+          <p class="footer-text">
+            Sua melhor escolha em aluguel de veículos. Qualidade, confiança e excelência em cada viagem.
+          </p>
+        </div>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Links Rápidos</p>
+          </li>
+          <li><a href="./index.html" class="footer-link">Início</a></li>
+          <li><a href="./quem-somos.html" class="footer-link">Quem Somos</a></li>
+          <li><a href="./frotas-tarifas.html" class="footer-link">Frotas</a></li>
+          <li><a href="./reserva.html" class="footer-link">Reserva</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Contato</p>
+          </li>
+          <li><a href="tel:+5511999999999" class="footer-link">11 99999-9999</a></li>
+          <li><a href="mailto:contato@montalvo.com.br" class="footer-link">contato@montalvo.com.br</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        </ul>
+        <p class="copyright">
+          &copy; 2024 <a href="#">Montalvo</a>. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/reserva.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

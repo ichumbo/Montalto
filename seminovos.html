@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seminovos - Montalvo</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/seminovos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" class="w-135" alt="Montalvo Logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="./index.html" class="navbar-link">Início</a></li>
+          <li><a href="./quem-somos.html" class="navbar-link">Quem Somos</a></li>
+          <li><a href="./frotas-tarifas.html" class="navbar-link">Frotas</a></li>
+          <li><a href="./seminovos.html" class="navbar-link active">Seminovos</a></li>
+          <li><a href="./oportunidades.html" class="navbar-link">Oportunidades</a></li>
+          <li><a href="./contato.html" class="navbar-link">Contato</a></li>
+          <li><a href="./reserva.html" class="navbar-link">Reserva</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- HERO SEMINOVOS -->
+      <section class="hero-seminovos">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge">
+              <ion-icon name="calendar-outline"></ion-icon>
+              Desde 1985
+            </span>
+            <h1 class="hero-title">
+              Carros Seminovos
+            </h1>
+            <p class="hero-text">
+              Veículos revisados e com garantia. A melhor opção para quem busca economia e confiabilidade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILTROS -->
+      <section class="filtros-section">
+        <div class="container">
+          <div class="filtros-container">
+            <h2 class="section-title">Encontre seu Seminovo Ideal</h2>
+            
+            <div class="filtros-grid">
+              <div class="filtro-group">
+                <label for="marca">Marca</label>
+                <select id="marca" name="marca">
+                  <option value="">Todas as marcas</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="honda">Honda</option>
+                  <option value="volkswagen">Volkswagen</option>
+                  <option value="ford">Ford</option>
+                  <option value="chevrolet">Chevrolet</option>
+                </select>
+              </div>
+
+              <div class="filtro-group">
+                <label for="preco">Preço até</label>
+                <select id="preco" name="preco">
+                  <option value="">Qualquer preço</option>
+                  <option value="30000">R$ 30.000</option>
+                  <option value="50000">R$ 50.000</option>
+                  <option value="80000">R$ 80.000</option>
+                  <option value="100000">R$ 100.000+</option>
+                </select>
+              </div>
+
+              <div class="filtro-group">
+                <label for="ano">Ano</label>
+                <select id="ano" name="ano">
+                  <option value="">Qualquer ano</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                </select>
+              </div>
+
+              <button class="btn-filtrar">
+                <ion-icon name="search-outline"></ion-icon>
+                Filtrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTA DE SEMINOVOS -->
+      <section class="seminovos-lista">
+        <div class="container">
+          <div class="seminovos-grid">
+            
+            <div class="seminovo-card">
+              <div class="card-banner">
+                <img src="./assets/images/car-1.jpg" alt="Honda Civic 2021">
+                <div class="card-badge">2021</div>
+                <button class="fav-btn">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="card-content">
+                <div class="card-header">
+                  <h3 class="card-title">Honda Civic EXL</h3>
+                  <div class="card-price">R$ 89.900</div>
+                </div>
+                
+                <div class="card-info">
+                  <div class="info-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    <span>45.000 km</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>Automático</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    <span>Flex</span>
+                  </div>
+                </div>
+                
+                <div class="card-actions">
+                  <button class="btn-valores" data-car="civic">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    Ver Valores
+                  </button>
+                  <button class="btn-contato">
+                    <ion-icon name="call-outline"></ion-icon>
+                    Contato
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="seminovo-card">
+              <div class="card-banner">
+                <img src="./assets/images/car-2.jpg" alt="Toyota Corolla 2022">
+                <div class="card-badge">2022</div>
+                <button class="fav-btn">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="card-content">
+                <div class="card-header">
+                  <h3 class="card-title">Toyota Corolla XEI</h3>
+                  <div class="card-price">R$ 95.500</div>
+                </div>
+                
+                <div class="card-info">
+                  <div class="info-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    <span>28.000 km</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>Automático</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    <span>Flex</span>
+                  </div>
+                </div>
+                
+                <div class="card-actions">
+                  <button class="btn-valores" data-car="corolla">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    Ver Valores
+                  </button>
+                  <button class="btn-contato">
+                    <ion-icon name="call-outline"></ion-icon>
+                    Contato
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="seminovo-card">
+              <div class="card-banner">
+                <img src="./assets/images/car-3.jpg" alt="Volkswagen Jetta 2020">
+                <div class="card-badge">2020</div>
+                <button class="fav-btn">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="card-content">
+                <div class="card-header">
+                  <h3 class="card-title">Volkswagen Jetta</h3>
+                  <div class="card-price">R$ 78.900</div>
+                </div>
+                
+                <div class="card-info">
+                  <div class="info-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    <span>52.000 km</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>Automático</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    <span>Flex</span>
+                  </div>
+                </div>
+                
+                <div class="card-actions">
+                  <button class="btn-valores" data-car="jetta">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    Ver Valores
+                  </button>
+                  <button class="btn-contato">
+                    <ion-icon name="call-outline"></ion-icon>
+                    Contato
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="seminovo-card">
+              <div class="card-banner">
+                <img src="./assets/images/car-4.jpg" alt="Ford Fusion 2021">
+                <div class="card-badge">2021</div>
+                <button class="fav-btn">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="card-content">
+                <div class="card-header">
+                  <h3 class="card-title">Ford Fusion Titanium</h3>
+                  <div class="card-price">R$ 112.000</div>
+                </div>
+                
+                <div class="card-info">
+                  <div class="info-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    <span>35.000 km</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>Automático</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    <span>Flex</span>
+                  </div>
+                </div>
+                
+                <div class="card-actions">
+                  <button class="btn-valores" data-car="fusion">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    Ver Valores
+                  </button>
+                  <button class="btn-contato">
+                    <ion-icon name="call-outline"></ion-icon>
+                    Contato
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="seminovo-card">
+              <div class="card-banner">
+                <img src="./assets/images/car-5.jpg" alt="Chevrolet Cruze 2022">
+                <div class="card-badge">2022</div>
+                <button class="fav-btn">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="card-content">
+                <div class="card-header">
+                  <h3 class="card-title">Chevrolet Cruze LTZ</h3>
+                  <div class="card-price">R$ 87.500</div>
+                </div>
+                
+                <div class="card-info">
+                  <div class="info-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    <span>31.000 km</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>Automático</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    <span>Flex</span>
+                  </div>
+                </div>
+                
+                <div class="card-actions">
+                  <button class="btn-valores" data-car="cruze">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    Ver Valores
+                  </button>
+                  <button class="btn-contato">
+                    <ion-icon name="call-outline"></ion-icon>
+                    Contato
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="seminovo-card">
+              <div class="card-banner">
+                <img src="./assets/images/car-6.jpg" alt="Hyundai Elantra 2021">
+                <div class="card-badge">2021</div>
+                <button class="fav-btn">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="card-content">
+                <div class="card-header">
+                  <h3 class="card-title">Hyundai Elantra</h3>
+                  <div class="card-price">R$ 92.800</div>
+                </div>
+                
+                <div class="card-info">
+                  <div class="info-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+                    <span>38.000 km</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>Automático</span>
+                  </div>
+                  <div class="info-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+                    <span>Flex</span>
+                  </div>
+                </div>
+                
+                <div class="card-actions">
+                  <button class="btn-valores" data-car="elantra">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    Ver Valores
+                  </button>
+                  <button class="btn-contato">
+                    <ion-icon name="call-outline"></ion-icon>
+                    Contato
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- VANTAGENS SEMINOVOS -->
+      <section class="vantagens-seminovos">
+        <div class="container">
+          <h2 class="section-title">Por que escolher um Seminovo?</h2>
+          
+          <div class="vantagens-grid">
+            <div class="vantagem-card">
+              <div class="card-icon">
+                <ion-icon name="pricetag-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Melhor Preço</h3>
+              <p class="card-text">Economia de até 30% comparado ao veículo zero km, mantendo a qualidade.</p>
+            </div>
+
+            <div class="vantagem-card">
+              <div class="card-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Garantia Inclusa</h3>
+              <p class="card-text">Todos os seminovos com garantia de 6 meses e revisão completa.</p>
+            </div>
+
+            <div class="vantagem-card">
+              <div class="card-icon">
+                <ion-icon name="document-text-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Documentação</h3>
+              <p class="card-text">Transferência facilitada e toda documentação regularizada.</p>
+            </div>
+
+            <div class="vantagem-card">
+              <div class="card-icon">
+                <ion-icon name="car-sport-outline"></ion-icon>
+              </div>
+              <h3 class="card-title">Qualidade Garantida</h3>
+              <p class="card-text">Veículos inspecionados por nossa equipe técnica especializada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- POPUP DE VALORES -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <button class="popup-close" id="popupClose">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      
+      <div class="popup-header">
+        <img id="popupCarImage" src="" alt="">
+        <div class="popup-car-info">
+          <h3 id="popupCarTitle"></h3>
+          <p id="popupCarSpecs"></p>
+        </div>
+      </div>
+      
+      <div class="popup-body">
+        <h4>Opções de Aluguel</h4>
+        <div class="pricing-options">
+          <div class="pricing-card">
+            <div class="pricing-period">Diária</div>
+            <div class="pricing-value" id="dailyPrice"></div>
+            <div class="pricing-desc">Por dia</div>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-period">Semanal</div>
+            <div class="pricing-value" id="weeklyPrice"></div>
+            <div class="pricing-desc">Por semana</div>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-period">Quinzenal</div>
+            <div class="pricing-value" id="biweeklyPrice"></div>
+            <div class="pricing-desc">Por 15 dias</div>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-period">Mensal</div>
+            <div class="pricing-value" id="monthlyPrice"></div>
+            <div class="pricing-desc">Por mês</div>
+          </div>
+        </div>
+        
+        <div class="popup-actions">
+          <button class="btn-reservar">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Fazer Reserva
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" class="w-135" class="w-135" alt="Montalvo Logo">
+          </a>
+          <p class="footer-text">
+            Encontre o seminovo perfeito com a qualidade e confiança que você merece. 
+            Nossa equipe está pronta para ajudar você a fazer a melhor escolha.
+          </p>
+        </div>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Empresa</p></li>
+          <li><a href="#" class="footer-link">Sobre nós</a></li>
+          <li><a href="#" class="footer-link">Seminovos</a></li>
+          <li><a href="#" class="footer-link">Contatos</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Suporte</p></li>
+          <li><a href="#" class="footer-link">Centro de ajuda</a></li>
+          <li><a href="#" class="footer-link">Financiamento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        </ul>
+        <p class="copyright">&copy; 2023 <a href="#">Montalvo</a>. Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/seminovos.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

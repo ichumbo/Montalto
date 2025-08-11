@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automotive - Alugue seu carro favorito</title>
+  <title>Montalto - Alugue seu carro favorito</title>
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png">
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
 
   <!-- 
     - custom css link
@@ -29,6 +31,19 @@
 <body>
 
   <!-- 
+    - #LOADING
+  -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Carregando...</div>
+      <div class="loader-subtext">Preparando sua experiência</div>
+    </div>
+  </div>
+
+
+
+  <!-- 
     - #HEADER
   -->
 
@@ -38,56 +53,47 @@
       <div class="overlay" data-overlay></div>
 
       <a href="#" class="logo">
-        <img src="./assets/images/logo.png" class="w-135" alt="Automotive logo">
+        <img src="./assets/images/logo.png"  class="w-135" alt="Montalvo Logo">
       </a>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
-
           <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            <a href="./index.html" class="navbar-link active" data-nav-link>Início</a>
           </li>
 
           <li>
-            <a href="#featured-car" class="navbar-link" data-nav-link>Explorar carros</a>
+            <a href="./quem-somos.html" class="navbar-link" data-nav-link>Quem Somos</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link" data-nav-link>Sobre nós</a>
+            <a href="./frotas-tarifas.html" class="navbar-link" data-nav-link>Frotas</a>
           </li>
 
           <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+            <a href="./seminovos.html" class="navbar-link" data-nav-link>Seminovos</a>
+          </li>
+
+          <li>
+            <a href="./oportunidades.html" class="navbar-link" data-nav-link>Oportunidades</a>
+          </li>
+
+          <li>
+            <a href="./contato.html" class="navbar-link" data-nav-link>Contato</a>
+          </li>
+
+          <li>
+            <a href="./reserva.html" class="navbar-link" data-nav-link>Reserva</a>
           </li>
 
         </ul>
       </nav>
 
-      <div class="header-actions">
-
-        <div class="header-contact">
-          <a href="tel:88002345678" class="contact-link">+55 21 97718 8050</a>
-
-          <span class="contact-time">Seg - Sab: 9:00 am - 6:00 pm</span>
-        </div>
-
-        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-          <ion-icon name="car-outline"></ion-icon>
-
-          <span id="aria-label-txt">Explorar carros</span>
-        </a>
-
-        <a href="#" class="btn user-btn" aria-label="Profile">
-          <ion-icon name="person-outline"></ion-icon>
-        </a>
-
-        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
-        </button>
-
-      </div>
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
 
     </div>
   </header>
@@ -107,10 +113,10 @@
         <div class="container">
 
           <div class="hero-content">
-            <h2 class="h1 hero-title">A maneira fácil de adquirir um contrato de arrendamento</h2>
+            <h2 class="h1 hero-title">Passeio com a família, viagem de trabalho ou lazer?</h2>
 
             <p class="hero-text">
-              Mais em Nova York, Nova Jersey e Connecticut!
+              Vá de carro, vá de Montalto!
             </p>
           </div>
 
@@ -158,11 +164,21 @@
           <div class="title-wrapper">
             <h2 class="h2 section-title">Carros em destaque</h2>
 
-            <a href="#" class="featured-car-link">
-              <span>Veja mais</span>
-
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </a>
+            <div style="display: flex; align-items: center; gap: 20px;">
+              <div class="view-toggle">
+                <button class="toggle-btn active" data-view="grid" title="Visualização em Grade">
+                  <ion-icon name="grid-outline"></ion-icon>
+                </button>
+                <button class="toggle-btn" data-view="list" title="Visualização em Lista">
+                  <ion-icon name="list-outline"></ion-icon>
+                </button>
+              </div>
+              
+              <a href="#" class="featured-car-link">
+                <span>Veja mais</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
           </div>
 
           <ul class="featured-car-list">
@@ -219,11 +235,16 @@
                       <strong>R$440</strong> / mês
                     </p>
 
-                    <button class="btn fav-btn" aria-label="Add to favourite list">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="btn">Alugue agora</button>
+                    <div class="card-actions">
+                      <button class="btn-pricing" data-car="toyota-rav4" 
+                              data-daily="150" 
+                              data-weekly="900" 
+                              data-biweekly="1650" 
+                              data-monthly="3000">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        Ver Valores
+                      </button>
+                    </div>
 
                   </div>
 
@@ -281,14 +302,21 @@
                   <div class="card-price-wrapper">
 
                     <p class="card-price">
-                      <strong>R$440</strong> / mês
+                      <strong>R$380</strong> / mês
                     </p>
 
-                    <button class="btn fav-btn" aria-label="Add to favourite list">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="btn">Alugue agora</button>
+                    <div class="card-actions">
+                      <button class="btn-pricing" data-car="bmw-3-series" 
+                              data-daily="130" 
+                              data-weekly="780" 
+                              data-biweekly="1450" 
+                              data-monthly="2650">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        Ver Valores
+                      </button>
+                      
+                      
+                    </div>
 
                   </div>
 
@@ -309,10 +337,10 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyota RAV4</a>
+                      <a href="#">Volkswagen T-Cross</a>
                     </h3>
 
-                    <data class="year" value="2022">2022</data>
+                    <data class="year" value="2020">2020</data>
                   </div>
 
                   <ul class="card-list">
@@ -320,19 +348,19 @@
                     <li class="card-list-item">
                       <ion-icon name="people-outline"></ion-icon>
 
-                      <span class="card-item-text">4 Pessoas</span>
+                      <span class="card-item-text">5 Pessoas</span>
                     </li>
 
                     <li class="card-list-item">
                       <ion-icon name="flash-outline"></ion-icon>
 
-                      <span class="card-item-text">Híbrido</span>
+                      <span class="card-item-text">Flex</span>
                     </li>
 
                     <li class="card-list-item">
                       <ion-icon name="speedometer-outline"></ion-icon>
 
-                      <span class="card-item-text">6.1km / 1-litro</span>
+                      <span class="card-item-text">8.2km / 1-litro</span>
                     </li>
 
                     <li class="card-list-item">
@@ -346,14 +374,21 @@
                   <div class="card-price-wrapper">
 
                     <p class="card-price">
-                      <strong>R$440</strong> / mês
+                      <strong>R$320</strong> / mês
                     </p>
 
-                    <button class="btn fav-btn" aria-label="Add to favourite list">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="btn">Alugue agora</button>
+                    <div class="card-actions">
+                      <button class="btn-pricing" data-car="volkswagen-tcross" 
+                              data-daily="110" 
+                              data-weekly="650" 
+                              data-biweekly="1200" 
+                              data-monthly="2200">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        Ver Valores
+                      </button>
+                      
+                      
+                    </div>
 
                   </div>
 
@@ -374,10 +409,10 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyota RAV4</a>
+                      <a href="#">Cadillac Escalade</a>
                     </h3>
 
-                    <data class="year" value="2022">2022</data>
+                    <data class="year" value="2020">2020</data>
                   </div>
 
                   <ul class="card-list">
@@ -385,19 +420,19 @@
                     <li class="card-list-item">
                       <ion-icon name="people-outline"></ion-icon>
 
-                      <span class="card-item-text">4 Pessoas</span>
+                      <span class="card-item-text">7 Pessoas</span>
                     </li>
 
                     <li class="card-list-item">
                       <ion-icon name="flash-outline"></ion-icon>
 
-                      <span class="card-item-text">Híbrido</span>
+                      <span class="card-item-text">Gasolina</span>
                     </li>
 
                     <li class="card-list-item">
                       <ion-icon name="speedometer-outline"></ion-icon>
 
-                      <span class="card-item-text">6.1km / 1-litro</span>
+                      <span class="card-item-text">4.5km / 1-litro</span>
                     </li>
 
                     <li class="card-list-item">
@@ -411,14 +446,21 @@
                   <div class="card-price-wrapper">
 
                     <p class="card-price">
-                      <strong>R$440</strong> / mês
+                      <strong>R$580</strong> / mês
                     </p>
 
-                    <button class="btn fav-btn" aria-label="Add to favourite list">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="btn">Alugue agora</button>
+                    <div class="card-actions">
+                      <button class="btn-pricing" data-car="cadillac-escalade" 
+                              data-daily="200" 
+                              data-weekly="1200" 
+                              data-biweekly="2200" 
+                              data-monthly="4000">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        Ver Valores
+                      </button>
+                      
+                      
+                    </div>
 
                   </div>
 
@@ -439,7 +481,7 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyota RAV4</a>
+                      <a href="#">BMW 4 Series GTI</a>
                     </h3>
 
                     <data class="year" value="2022">2022</data>
@@ -456,13 +498,13 @@
                     <li class="card-list-item">
                       <ion-icon name="flash-outline"></ion-icon>
 
-                      <span class="card-item-text">Híbrido</span>
+                      <span class="card-item-text">Gasolina</span>
                     </li>
 
                     <li class="card-list-item">
                       <ion-icon name="speedometer-outline"></ion-icon>
 
-                      <span class="card-item-text">6.1km / 1-litro</span>
+                      <span class="card-item-text">7.8km / 1-litro</span>
                     </li>
 
                     <li class="card-list-item">
@@ -476,14 +518,21 @@
                   <div class="card-price-wrapper">
 
                     <p class="card-price">
-                      <strong>R$440</strong> / mês
+                      <strong>R$520</strong> / mês
                     </p>
 
-                    <button class="btn fav-btn" aria-label="Add to favourite list">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="btn">Alugue agora</button>
+                    <div class="card-actions">
+                      <button class="btn-pricing" data-car="bmw-4-series" 
+                              data-daily="180" 
+                              data-weekly="1080" 
+                              data-biweekly="1980" 
+                              data-monthly="3600">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        Ver Valores
+                      </button>
+                      
+                      
+                    </div>
 
                   </div>
 
@@ -504,10 +553,10 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyota RAV4</a>
+                      <a href="#">BMW 4 Series</a>
                     </h3>
 
-                    <data class="year" value="2022">2022</data>
+                    <data class="year" value="2019">2019</data>
                   </div>
 
                   <ul class="card-list">
@@ -521,13 +570,13 @@
                     <li class="card-list-item">
                       <ion-icon name="flash-outline"></ion-icon>
 
-                      <span class="card-item-text">Híbrido</span>
+                      <span class="card-item-text">Gasolina</span>
                     </li>
 
                     <li class="card-list-item">
                       <ion-icon name="speedometer-outline"></ion-icon>
 
-                      <span class="card-item-text">6.1km / 1-litro</span>
+                      <span class="card-item-text">7.5km / 1-litro</span>
                     </li>
 
                     <li class="card-list-item">
@@ -541,14 +590,21 @@
                   <div class="card-price-wrapper">
 
                     <p class="card-price">
-                      <strong>R$440</strong> / mês
+                      <strong>R$480</strong> / mês
                     </p>
 
-                    <button class="btn fav-btn" aria-label="Add to favourite list">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="btn">Alugue agora</button>
+                    <div class="card-actions">
+                      <button class="btn-pricing" data-car="bmw-4-series-2019" 
+                              data-daily="165" 
+                              data-weekly="990" 
+                              data-biweekly="1820" 
+                              data-monthly="3300">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        Ver Valores
+                      </button>
+                      
+                      
+                    </div>
 
                   </div>
 
@@ -562,7 +618,104 @@
         </div>
       </section>
 
+      <!-- 
+        - #WHY CHOOSE US
+      -->
 
+      <section class="section why-choose">
+        <div class="container">
+
+          <h2 class="h2 section-title">Por que nos escolher?</h2>
+
+          <ul class="why-choose-list">
+
+            <li>
+              <div class="why-choose-card">
+
+                <div class="card-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+
+                <div class="card-content">
+                  <h3 class="card-title">Segurança Garantida</h3>
+                  <p class="card-text">Todos os nossos veículos passam por rigorosa inspeção e manutenção preventiva.</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="why-choose-card">
+
+                <div class="card-icon">
+                  <ion-icon name="time-outline"></ion-icon>
+                </div>
+
+                <div class="card-content">
+                  <h3 class="card-title">Disponível 24/7</h3>
+                  <p class="card-text">Atendimento e suporte técnico disponível 24 horas por dia, 7 dias por semana.</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="why-choose-card">
+
+                <div class="card-icon">
+                  <ion-icon name="leaf-outline"></ion-icon>
+                </div>
+
+                <div class="card-content">
+                  <h3 class="card-title">Frota Ecológica</h3>
+                  <p class="card-text">Veículos híbridos e elétricos para uma experiência sustentável e econômica.</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="why-choose-card">
+
+                <div class="card-icon">
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+
+                <div class="card-content">
+                  <h3 class="card-title">Melhor Preço</h3>
+                  <p class="card-text">Tarifas competitivas e transparentes, sem taxas ocultas ou surpresas.</p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+<!-- 
+        - #SOCIAL BAR
+      -->
+
+      <section class="social-bar">
+        <div class="container">
+
+          <p class="social-bar-text">Siga-nos nas redes sociais</p>
+
+          <div class="social-bar-links">
+            <a href="#" class="social-bar-link" aria-label="Instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+
+            <a href="#" class="social-bar-link" aria-label="Facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </div>
+
+        </div>
+      </section>
 
 
 
@@ -648,8 +801,6 @@
 
         </div>
       </section>
-
-
 
 
 
@@ -892,7 +1043,7 @@
 
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="./assets/images/logo.png" class="w-135" alt="Automotive logo">
+            <img src="./assets/images/logo-light.png" class="w-135" class="w-135" alt="Montalvo Logo">
           </a>
 
           <p class="footer-text">
@@ -996,10 +1147,93 @@
 
 
 
+  <!-- Pricing Popup -->
+  <div class="popup-overlay" id="pricingPopup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3 class="popup-title" id="popupCarTitle">Valores de Locação</h3>
+        <button class="popup-close" id="closePopup">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+      
+      <div class="popup-body">
+        <div class="car-info">
+          <div class="car-image">
+            <img id="popupCarImage" src="" alt="Car Image">
+          </div>
+          <div class="car-details">
+            <h4 id="popupCarName">Nome do Carro</h4>
+            <span id="popupCarYear">Ano</span>
+          </div>
+        </div>
+        
+        <div class="pricing-grid">
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Diária</h5>
+              <span class="price" id="dailyPrice">R$ 0</span>
+              <small>por dia</small>
+            </div>
+          </div>
+          
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar-number-outline"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Semanal</h5>
+              <span class="price" id="weeklyPrice">R$ 0</span>
+              <small>por semana</small>
+            </div>
+          </div>
+          
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar-clear-outline"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Quinzenal</h5>
+              <span class="price" id="biweeklyPrice">R$ 0</span>
+              <small>por quinzena</small>
+            </div>
+          </div>
+          
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Mensal</h5>
+              <span class="price" id="monthlyPrice">R$ 0</span>
+              <small>por mês</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="popup-actions">
+          <button class="btn-reserve">
+            <ion-icon name="car-outline"></ion-icon>
+            Reservar Agora
+          </button>
+          <button class="btn-contact">
+            <ion-icon name="call-outline"></ion-icon>
+            Entrar em Contato
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/loading.js"></script>
+  <script src="./assets/js/view-toggle.js"></script>
 
   <!-- 
     - ionicon link
@@ -1010,3 +1244,9 @@
 </body>
 
 </html>
+<!-- Background decorative elements -->
+<div class="blob-1"></div>
+<div class="blob-2"></div>
+<div class="blob-3"></div>
+<div class="circle-1"></div>
+<div class="circle-2"></div>

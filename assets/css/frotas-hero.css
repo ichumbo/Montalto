@@ -1,0 +1,174 @@
+/* Hero Section Automobilística - Frotas */
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item ion-icon {
+  font-size: 2rem;
+  color: var(--orange-web);
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--white-alpha-70);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-text ion-icon {
+  color: var(--orange-web);
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  background: var(--orange-web);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--orange-web);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-outline:hover {
+  background: var(--orange-web);
+  color: var(--white);
+}
+
+.car-showcase {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.car-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+.car-item.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 10px 30px rgba(255, 94, 77, 0.3);
+}
+
+.car-item img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.car-category {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--white);
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.performance-indicators {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.indicator ion-icon {
+  color: var(--orange-web);
+  font-size: 1.2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-stats {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 0.8rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .car-showcase {
+    gap: 0.5rem;
+  }
+  
+  .car-item img {
+    width: 100px;
+    height: 70px;
+  }
+  
+  .performance-indicators {
+    gap: 1rem;
+  }
+  
+  .indicator {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}
