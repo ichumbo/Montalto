@@ -122,26 +122,29 @@
   background: var(--white);
   padding: 40px;
   border-radius: var(--radius-18);
-  box-shadow: 0 8px 30px var(--shadow-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .filtros-section .section-title {
   text-align: center;
   margin-bottom: 40px;
   font-size: var(--fs-2);
-  font-weight: 700;
+  font-weight: var(--fw-700);
   color: var(--neutral-dark);
+  font-family: var(--ff-nunito);
   position: relative;
 }
 
 .filtros-section .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
+  width: 60px;
+  height: 3px;
   background: var(--primary-orange);
   border-radius: 2px;
 }
@@ -151,6 +154,7 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   align-items: end;
+  margin-bottom: 30px;
 }
 
 .filtro-group {
@@ -161,7 +165,7 @@
 .filtro-group label {
   font-family: var(--ff-nunito);
   font-weight: var(--fw-600);
-  color: var(--text-dark);
+  color: var(--neutral-dark);
   margin-bottom: 8px;
   font-size: var(--fs-6);
 }
@@ -174,13 +178,27 @@
   font-size: var(--fs-6);
   color: var(--text-dark);
   background: var(--white);
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .filtro-group select:focus {
   outline: none;
   border-color: var(--primary-orange);
-  box-shadow: 0 0 0 3px rgba(33, 112, 179, 0.1);
+  box-shadow: 0 0 0 3px rgba(252, 152, 53, 0.1);
+}
+
+.filtro-group select:hover {
+  border-color: var(--primary-orange);
+}
+
+.filtros-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-light);
 }
 
 .btn-filtrar {
@@ -193,7 +211,7 @@
   font-weight: var(--fw-600);
   font-size: var(--fs-6);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -203,10 +221,37 @@
 .btn-filtrar:hover {
   background: var(--secondary-blue);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 4px 12px rgba(33, 112, 179, 0.3);
 }
 
 .btn-filtrar ion-icon {
+  font-size: 18px;
+}
+
+.btn-limpar {
+  background: transparent;
+  color: var(--text-medium);
+  border: 2px solid var(--border-light);
+  padding: 12px 24px;
+  border-radius: var(--radius-10);
+  font-family: var(--ff-nunito);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-limpar:hover {
+  border-color: var(--primary-orange);
+  color: var(--primary-orange);
+  transform: translateY(-2px);
+}
+
+.btn-limpar ion-icon {
   font-size: 18px;
 }
 

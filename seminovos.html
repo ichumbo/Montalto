@@ -106,7 +106,24 @@
                 </select>
               </div>
 
-              <button class="btn-filtrar">
+              <div class="filtro-group">
+                <label for="combustivel">Combustível</label>
+                <select id="combustivel" name="combustivel">
+                  <option value="">Qualquer combustível</option>
+                  <option value="flex">Flex</option>
+                  <option value="gasolina">Gasolina</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="eletrico">Elétrico</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="filtros-actions">
+              <button class="btn-limpar" id="btnLimpar">
+                <ion-icon name="refresh-outline"></ion-icon>
+                Limpar Filtros
+              </button>
+              <button class="btn-filtrar" id="btnFiltrar">
                 <ion-icon name="search-outline"></ion-icon>
                 Filtrar
               </button>

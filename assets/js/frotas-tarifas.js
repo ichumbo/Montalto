@@ -1,214 +1,274 @@
-// FROTAS & TARIFAS - JavaScript
+// Vehicle details data
+const vehicleData = {
+  'Chevrolet Onix': {
+    image: './assets/images/car-1.jpg',
+    daily: 89,
+    weekly: 534,
+    biweekly: 979,
+    monthly: 1780
+  },
+  'Volkswagen Virtus': {
+    image: './assets/images/car-2.jpg',
+    daily: 129,
+    weekly: 774,
+    biweekly: 1419,
+    monthly: 2580
+  },
+  'Toyota Corolla': {
+    image: './assets/images/car-3.jpg',
+    daily: 189,
+    weekly: 1134,
+    biweekly: 2079,
+    monthly: 3780
+  },
+  'Honda HR-V': {
+    image: './assets/images/car-4.jpg',
+    daily: 219,
+    weekly: 1314,
+    biweekly: 2409,
+    monthly: 4380
+  },
+  'BMW 320i': {
+    image: './assets/images/car-5.jpg',
+    daily: 349,
+    weekly: 2094,
+    biweekly: 3839,
+    monthly: 6980
+  },
+  'Jeep Compass': {
+    image: './assets/images/car-6.jpg',
+    daily: 259,
+    weekly: 1554,
+    biweekly: 2849,
+    monthly: 5180
+  }
+};
 
+// Popup elements
+const popup = document.getElementById('pricingPopup');
+const closeBtn = document.getElementById('closePopup');
+const popupCarName = document.getElementById('popupCarName');
+const popupCarImage = document.getElementById('popupCarImage');
+const dailyPrice = document.getElementById('dailyPrice');
+const weeklyPrice = document.getElementById('weeklyPrice');
+const biweeklyPrice = document.getElementById('biweeklyPrice');
+const monthlyPrice = document.getElementById('monthlyPrice');
+
+// Open popup function
+function openPopup(carName) {
+  const data = vehicleData[carName];
+  if (data) {
+    popupCarName.textContent = carName;
+    popupCarImage.src = data.image;
+    dailyPrice.textContent = `R$ ${data.daily}`;
+    weeklyPrice.textContent = `R$ ${data.weekly}`;
+    biweeklyPrice.textContent = `R$ ${data.biweekly}`;
+    monthlyPrice.textContent = `R$ ${data.monthly}`;
+    
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Close popup function
+function closePopup() {
+  popup.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// View toggle functionality
+function initViewToggle() {
+  const viewButtons = document.querySelectorAll('.view-btn');
+  const vehiclesGrid = document.getElementById('vehicles-container');
+  
+  viewButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const view = this.getAttribute('data-view');
+      
+      // Remove active class from all buttons
+      viewButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      // Toggle grid view
+      if (view === 'list') {
+        vehiclesGrid.classList.add('list-view');
+      } else {
+        vehiclesGrid.classList.remove('list-view');
+      }
+    });
+  });
+}
+
+// Filtros functionality
+function initFiltros() {
+  // Filtros de categoria
+  const filtroButtons = document.querySelectorAll('.filtro-btn');
+  filtroButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      filtroButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      updateResultsCount();
+    });
+  });
+
+  // Filtros de capacidade
+  const capacityButtons = document.querySelectorAll('.capacity-btn');
+  capacityButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      capacityButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      updateResultsCount();
+    });
+  });
+
+  // Filtros de bagagem
+  const baggageButtons = document.querySelectorAll('.baggage-btn');
+  baggageButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      baggageButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      updateResultsCount();
+    });
+  });
+
+  // Price range slider
+  const priceRange = document.getElementById('priceRange');
+  const currentPrice = document.getElementById('currentPrice');
+  const priceMin = document.getElementById('priceMin');
+  const priceMax = document.getElementById('priceMax');
+
+  if (priceRange && currentPrice) {
+    priceRange.addEventListener('input', function() {
+      currentPrice.textContent = this.value;
+      updateResultsCount();
+    });
+  }
+
+  if (priceMin && priceMax) {
+    priceMin.addEventListener('input', updateResultsCount);
+    priceMax.addEventListener('input', updateResultsCount);
+  }
+
+  // Checkboxes
+  const checkboxes = document.querySelectorAll('.filtro-checkboxes input[type="checkbox"], .extras-grid input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateResultsCount);
+  });
+
+  // Botão limpar filtros
+  const btnLimpar = document.querySelector('.btn-limpar-filtros');
+  if (btnLimpar) {
+    btnLimpar.addEventListener('click', function() {
+      // Reset category filters
+      filtroButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.filtro-btn[data-filter="todos"]').classList.add('active');
+      
+      // Reset capacity filters
+      capacityButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.capacity-btn[data-capacity="5"]').classList.add('active');
+      
+      // Reset baggage filters
+      baggageButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.baggage-btn[data-baggage="3"]').classList.add('active');
+      
+      // Reset checkboxes
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = checkbox.hasAttribute('checked');
+      });
+      
+      // Reset price range
+      if (priceRange) {
+        priceRange.value = 275;
+        currentPrice.textContent = '275';
+      }
+      if (priceMin) priceMin.value = '50';
+      if (priceMax) priceMax.value = '500';
+      
+      updateResultsCount();
+    });
+  }
+
+  // Botão aplicar filtros
+  const btnAplicar = document.querySelector('.btn-aplicar-filtros');
+  if (btnAplicar) {
+    btnAplicar.addEventListener('click', function() {
+      // Aqui você pode implementar a lógica de filtrar os veículos
+      console.log('Aplicando filtros...');
+      
+      // Animação de feedback
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 150);
+      
+      // Scroll para os resultados
+      document.querySelector('.frota-grid').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  }
+}
+
+// Atualizar contador de resultados
+function updateResultsCount() {
+  const resultadosCount = document.getElementById('resultadosCount');
+  if (resultadosCount) {
+    // Simular contagem baseada nos filtros ativos
+    const activeFilters = document.querySelectorAll('.filtro-btn.active, .capacity-btn.active, .baggage-btn.active').length;
+    const checkedBoxes = document.querySelectorAll('.filtro-checkboxes input:checked, .extras-grid input:checked').length;
+    
+    // Lógica simples para simular resultados
+    let count = 12;
+    if (activeFilters > 3) count -= 2;
+    if (checkedBoxes < 3) count -= 1;
+    if (checkedBoxes > 6) count -= 3;
+    
+    count = Math.max(1, count); // Mínimo 1 resultado
+    
+    resultadosCount.textContent = `${count} veículos encontrados`;
+  }
+}
+
+// Event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Elementos
-    const vehicleCards = document.querySelectorAll('.vehicle-card');
-    const viewBtns = document.querySelectorAll('.view-btn');
-    const vehiclesContainer = document.getElementById('vehicles-container');
-    
+  // Initialize view toggle
+  initViewToggle();
+  
+  // Initialize filtros
+  initFiltros();
+  
+  // Add click event to all "Ver Detalhes" buttons
+  const detailButtons = document.querySelectorAll('.btn-quick-view');
+  detailButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const card = this.closest('.vehicle-card');
+      const carName = card.querySelector('.card-title').textContent;
+      openPopup(carName);
+    });
+  });
 
-    
-    // Toggle de visualização (Grid/Lista)
-    viewBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const view = this.dataset.view;
-            
-            // Remove active de todos os botões
-            viewBtns.forEach(b => b.classList.remove('active'));
-            // Adiciona active ao botão clicado
-            this.classList.add('active');
-            
-            // Altera o layout
-            if (view === 'list') {
-                vehiclesContainer.classList.add('list-view');
-                vehiclesContainer.style.gridTemplateColumns = '1fr';
-            } else {
-                vehiclesContainer.classList.remove('list-view');
-                vehiclesContainer.style.gridTemplateColumns = 'repeat(auto-fit, minmax(350px, 1fr))';
-            }
-        });
+  // Close popup events
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closePopup);
+  }
+  
+  if (popup) {
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        closePopup();
+      }
     });
-    
-    // Animação de entrada dos cards
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observa todos os cards
-    vehicleCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s ease';
-        observer.observe(card);
-    });
-    
-    // Botões de reserva
-    const reserveBtns = document.querySelectorAll('.btn-reserve');
-    reserveBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const vehicleName = this.closest('.vehicle-card').querySelector('.card-title').textContent;
-            
-            // Animação de sucesso
-            this.style.background = '#28a745';
-            this.textContent = 'Reservado!';
-            
-            setTimeout(() => {
-                this.style.background = '';
-                this.textContent = 'Reservar Agora';
-            }, 2000);
-            
-            // Aqui você pode adicionar a lógica para processar a reserva
-            console.log(`Reserva solicitada para: ${vehicleName}`);
-        });
-    });
-    
-    // Botões de visualização rápida
-    const quickViewBtns = document.querySelectorAll('.btn-quick-view');
-    quickViewBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const vehicleName = this.closest('.vehicle-card').querySelector('.card-title').textContent;
-            
-            // Modal simples (você pode expandir isso)
-            alert(`Detalhes do ${vehicleName}\n\nEm breve, um modal completo com todas as informações do veículo será exibido aqui.`);
-        });
-    });
-    
-    // Smooth scroll para seções
-    function smoothScroll(target) {
-        document.querySelector(target).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-    
-    // Contador animado para estatísticas
-    function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number');
-        
-        counters.forEach(counter => {
-            const target = parseInt(counter.textContent.replace(/\D/g, ''));
-            const increment = target / 100;
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    counter.textContent = counter.textContent.replace(/\d+/, target);
-                    clearInterval(timer);
-                } else {
-                    counter.textContent = counter.textContent.replace(/\d+/, Math.floor(current));
-                }
-            }, 20);
-        });
-    }
-    
-    // Inicia contador quando a seção hero fica visível
-    const heroSection = document.querySelector('.hero-frotas');
-    const heroObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                heroObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    if (heroSection) {
-        heroObserver.observe(heroSection);
-    }
-    
-    // Scroll suave removido para melhor performance
-    
-    // Loading state para filtros
-    function showLoading() {
-        vehiclesContainer.style.opacity = '0.5';
-        vehiclesContainer.style.pointerEvents = 'none';
-    }
-    
-    function hideLoading() {
-        vehiclesContainer.style.opacity = '1';
-        vehiclesContainer.style.pointerEvents = 'auto';
-    }
-    
+  }
 
+  // Close with ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
+      closePopup();
+    }
+  });
+  
+  // Initialize results count
+  updateResultsCount();
 });
-
-// CSS adicional via JavaScript para animações
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .list-view .vehicle-card {
-        display: flex !important;
-        flex-direction: row;
-        align-items: center;
-        max-width: none;
-    }
-    
-    .list-view .card-image {
-        width: 300px;
-        height: 200px;
-        flex-shrink: 0;
-    }
-    
-    .list-view .card-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 200px;
-    }
-    
-    .list-view .card-specs {
-        display: flex;
-        gap: 20px;
-        margin: 10px 0;
-    }
-    
-    .list-view .card-price {
-        margin: 10px 0;
-        align-self: flex-start;
-    }
-    
-    .list-view .btn-reserve {
-        width: auto;
-        padding: 10px 20px;
-        align-self: flex-start;
-    }
-    
-    @media (max-width: 768px) {
-        .list-view .vehicle-card {
-            flex-direction: column;
-        }
-        
-        .list-view .card-image {
-            width: 100%;
-            height: 220px;
-        }
-        
-        .list-view .card-content {
-            height: auto;
-        }
-    }
-`;
-document.head.appendChild(style);

@@ -59,13 +59,200 @@
               <ion-icon name="calendar-outline"></ion-icon>
               Desde 1985
             </span>
-          <h1 class="hero-title">Nossa Completa</h1>
+          <h1 class="hero-title">Nossa Frota</h1>
           <p class="hero-subtitle">Descubra nossa ampla seleção de veículos para todas as ocasiões</p>
         </div>
       </div>
     </section>
 
+    <!-- FILTROS SECTION -->
+    <section class="filtros-section">
+      <div class="container">
+        <div class="filtros-header">
+          <h2 class="filtros-title">Encontre o Veículo Ideal</h2>
+          <p class="filtros-subtitle">Use os filtros abaixo para personalizar sua busca</p>
+        </div>
 
+        <div class="filtros-container">
+          <!-- Filtros Principais -->
+          <div class="filtros-principais">
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="car-outline"></ion-icon>
+                Categoria
+              </label>
+              <div class="filtro-options">
+                <button class="filtro-btn active" data-filter="todos">Todos</button>
+                <button class="filtro-btn" data-filter="economico">Econômico</button>
+                <button class="filtro-btn" data-filter="intermediario">Intermediário</button>
+                <button class="filtro-btn" data-filter="executivo">Executivo</button>
+                <button class="filtro-btn" data-filter="suv">SUV</button>
+                <button class="filtro-btn" data-filter="premium">Premium</button>
+              </div>
+            </div>
+
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="speedometer-outline"></ion-icon>
+                Transmissão
+              </label>
+              <div class="filtro-checkboxes">
+                <label class="checkbox-item">
+                  <input type="checkbox" value="manual" checked>
+                  <span class="checkmark"></span>
+                  Manual
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" value="automatico" checked>
+                  <span class="checkmark"></span>
+                  Automático
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" value="cvt" checked>
+                  <span class="checkmark"></span>
+                  CVT
+                </label>
+              </div>
+            </div>
+
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="flash-outline"></ion-icon>
+                Combustível
+              </label>
+              <div class="filtro-checkboxes">
+                <label class="checkbox-item">
+                  <input type="checkbox" value="flex" checked>
+                  <span class="checkmark"></span>
+                  Flex
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" value="gasolina" checked>
+                  <span class="checkmark"></span>
+                  Gasolina
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" value="hibrido" checked>
+                  <span class="checkmark"></span>
+                  Híbrido
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" value="eletrico" checked>
+                  <span class="checkmark"></span>
+                  Elétrico
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtros Avançados -->
+          <div class="filtros-avancados">
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="cash-outline"></ion-icon>
+                Faixa de Preço (por dia)
+              </label>
+              <div class="price-range">
+                <div class="price-inputs">
+                  <input type="number" id="priceMin" placeholder="Mín" value="50">
+                  <span class="price-separator">até</span>
+                  <input type="number" id="priceMax" placeholder="Máx" value="500">
+                </div>
+                <div class="price-slider">
+                  <input type="range" id="priceRange" min="50" max="500" value="275">
+                  <div class="price-display">
+                    <span>R$ <span id="currentPrice">275</span>/dia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="people-outline"></ion-icon>
+                Capacidade
+              </label>
+              <div class="capacity-options">
+                <button class="capacity-btn" data-capacity="2">2 pessoas</button>
+                <button class="capacity-btn active" data-capacity="5">5 pessoas</button>
+                <button class="capacity-btn" data-capacity="7">7 pessoas</button>
+                <button class="capacity-btn" data-capacity="9">9+ pessoas</button>
+              </div>
+            </div>
+
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="bag-outline"></ion-icon>
+                Bagagem
+              </label>
+              <div class="baggage-selector">
+                <button class="baggage-btn" data-baggage="1">1 mala</button>
+                <button class="baggage-btn" data-baggage="2">2 malas</button>
+                <button class="baggage-btn active" data-baggage="3">3 malas</button>
+                <button class="baggage-btn" data-baggage="4">4+ malas</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtros Extras -->
+          <div class="filtros-extras">
+            <div class="filtro-group">
+              <label class="filtro-label">
+                <ion-icon name="star-outline"></ion-icon>
+                Recursos Extras
+              </label>
+              <div class="extras-grid">
+                <label class="extra-item">
+                  <input type="checkbox" value="ar-condicionado">
+                  <span class="extra-icon"><ion-icon name="snow-outline"></ion-icon></span>
+                  <span class="extra-text">Ar Condicionado</span>
+                </label>
+                <label class="extra-item">
+                  <input type="checkbox" value="gps">
+                  <span class="extra-icon"><ion-icon name="navigate-outline"></ion-icon></span>
+                  <span class="extra-text">GPS</span>
+                </label>
+                <label class="extra-item">
+                  <input type="checkbox" value="bluetooth">
+                  <span class="extra-icon"><ion-icon name="bluetooth-outline"></ion-icon></span>
+                  <span class="extra-text">Bluetooth</span>
+                </label>
+                <label class="extra-item">
+                  <input type="checkbox" value="usb">
+                  <span class="extra-icon"><ion-icon name="cable-outline"></ion-icon></span>
+                  <span class="extra-text">USB</span>
+                </label>
+                <label class="extra-item">
+                  <input type="checkbox" value="camera-re">
+                  <span class="extra-icon"><ion-icon name="camera-outline"></ion-icon></span>
+                  <span class="extra-text">Câmera de Ré</span>
+                </label>
+                <label class="extra-item">
+                  <input type="checkbox" value="sensor-estacionamento">
+                  <span class="extra-icon"><ion-icon name="radio-outline"></ion-icon></span>
+                  <span class="extra-text">Sensor Estacionamento</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ações dos Filtros -->
+          <div class="filtros-actions">
+            <button class="btn-limpar-filtros">
+              <ion-icon name="refresh-outline"></ion-icon>
+              Limpar Filtros
+            </button>
+            <button class="btn-aplicar-filtros">
+              <ion-icon name="search-outline"></ion-icon>
+              Aplicar Filtros
+            </button>
+            <div class="resultados-count">
+              <span id="resultadosCount">12 veículos encontrados</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FROTA GRID -->
     <section class="frota-grid">
@@ -85,7 +272,6 @@
         <div class="vehicles-grid" id="vehicles-container">
           <!-- Categoria Econômico -->
           <div class="vehicle-card" data-category="economico">
-            <div class="card-badge">Econômico</div>
             <div class="card-image">
               <img src="./assets/images/car-1.jpg" alt="Chevrolet Onix">
               <div class="card-overlay">
@@ -110,7 +296,6 @@
 
           <!-- Categoria Intermediário -->
           <div class="vehicle-card" data-category="intermediario">
-            <div class="card-badge">Intermediário</div>
             <div class="card-image">
               <img src="./assets/images/car-2.jpg" alt="Volkswagen Virtus">
               <div class="card-overlay">
@@ -135,7 +320,6 @@
 
           <!-- Categoria Executivo -->
           <div class="vehicle-card" data-category="executivo">
-            <div class="card-badge">Executivo</div>
             <div class="card-image">
               <img src="./assets/images/car-3.jpg" alt="Toyota Corolla">
               <div class="card-overlay">
@@ -160,7 +344,6 @@
 
           <!-- Categoria SUV -->
           <div class="vehicle-card" data-category="suv">
-            <div class="card-badge">SUV</div>
             <div class="card-image">
               <img src="./assets/images/car-4.jpg" alt="Honda HR-V">
               <div class="card-overlay">
@@ -185,7 +368,6 @@
 
           <!-- Categoria Premium -->
           <div class="vehicle-card" data-category="premium">
-            <div class="card-badge premium">Premium</div>
             <div class="card-image">
               <img src="./assets/images/car-5.jpg" alt="BMW 320i">
               <div class="card-overlay">
@@ -210,7 +392,6 @@
 
           <!-- Mais veículos -->
           <div class="vehicle-card" data-category="suv">
-            <div class="card-badge">SUV</div>
             <div class="card-image">
               <img src="./assets/images/car-6.jpg" alt="Jeep Compass">
               <div class="card-overlay">
@@ -397,6 +578,87 @@
 
     </div>
   </footer>
+
+  <!-- Pricing Popup -->
+  <div class="popup-overlay" id="pricingPopup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3 class="popup-title" id="popupCarTitle">Detalhes do Veículo</h3>
+        <button class="popup-close" id="closePopup">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+      
+      <div class="popup-body">
+        <div class="car-info">
+          <div class="car-image">
+            <img id="popupCarImage" src="" alt="Car Image">
+          </div>
+          <div class="car-details">
+            <h4 id="popupCarName">Nome do Carro</h4>
+            <span id="popupCarYear">2023</span>
+          </div>
+        </div>
+        
+        <div class="pricing-grid">
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Diária</h5>
+              <span class="price" id="dailyPrice">R$ 0</span>
+              <small>por dia</small>
+            </div>
+          </div>
+          
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar-number-outline"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Semanal</h5>
+              <span class="price" id="weeklyPrice">R$ 0</span>
+              <small>por semana</small>
+            </div>
+          </div>
+          
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar-clear-outline"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Quinzenal</h5>
+              <span class="price" id="biweeklyPrice">R$ 0</span>
+              <small>por quinzena</small>
+            </div>
+          </div>
+          
+          <div class="pricing-item">
+            <div class="pricing-icon">
+              <ion-icon name="calendar"></ion-icon>
+            </div>
+            <div class="pricing-info">
+              <h5>Mensal</h5>
+              <span class="price" id="monthlyPrice">R$ 0</span>
+              <small>por mês</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="popup-actions">
+          <button class="btn-reserve">
+            <ion-icon name="car-outline"></ion-icon>
+            Reservar Agora
+          </button>
+          <button class="btn-contact">
+            <ion-icon name="call-outline"></ion-icon>
+            Entrar em Contato
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
