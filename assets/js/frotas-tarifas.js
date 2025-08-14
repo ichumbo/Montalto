@@ -102,41 +102,15 @@ function initViewToggle() {
 
 // Filtros functionality
 function initFiltros() {
-  // Filtros de categoria
-  const filtroButtons = document.querySelectorAll('.filtro-btn');
-  filtroButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      filtroButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-      updateResultsCount();
-    });
-  });
-
-  // Filtros de capacidade
-  const capacityButtons = document.querySelectorAll('.capacity-btn');
-  capacityButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      capacityButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-      updateResultsCount();
-    });
-  });
-
-  // Filtros de bagagem
-  const baggageButtons = document.querySelectorAll('.baggage-btn');
-  baggageButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      baggageButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-      updateResultsCount();
-    });
+  // Filtros select
+  const filtroSelects = document.querySelectorAll('.filtro-select');
+  filtroSelects.forEach(select => {
+    select.addEventListener('change', updateResultsCount);
   });
 
   // Price range slider
   const priceRange = document.getElementById('priceRange');
   const currentPrice = document.getElementById('currentPrice');
-  const priceMin = document.getElementById('priceMin');
-  const priceMax = document.getElementById('priceMax');
 
   if (priceRange && currentPrice) {
     priceRange.addEventListener('input', function() {
@@ -145,57 +119,35 @@ function initFiltros() {
     });
   }
 
-  if (priceMin && priceMax) {
-    priceMin.addEventListener('input', updateResultsCount);
-    priceMax.addEventListener('input', updateResultsCount);
-  }
-
-  // Checkboxes
-  const checkboxes = document.querySelectorAll('.filtro-checkboxes input[type="checkbox"], .extras-grid input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', updateResultsCount);
-  });
-
   // Botão limpar filtros
-  const btnLimpar = document.querySelector('.btn-limpar-filtros');
+  const btnLimpar = document.querySelector('.btn-limpar');
   if (btnLimpar) {
     btnLimpar.addEventListener('click', function() {
-      // Reset category filters
-      filtroButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelector('.filtro-btn[data-filter="todos"]').classList.add('active');
-      
-      // Reset capacity filters
-      capacityButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelector('.capacity-btn[data-capacity="5"]').classList.add('active');
-      
-      // Reset baggage filters
-      baggageButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelector('.baggage-btn[data-baggage="3"]').classList.add('active');
-      
-      // Reset checkboxes
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = checkbox.hasAttribute('checked');
+      // Reset selects
+      filtroSelects.forEach(select => {
+        select.selectedIndex = 0;
       });
       
       // Reset price range
       if (priceRange) {
-        priceRange.value = 275;
-        currentPrice.textContent = '275';
+        priceRange.value = 500;
+        currentPrice.textContent = '500';
       }
-      if (priceMin) priceMin.value = '50';
-      if (priceMax) priceMax.value = '500';
       
       updateResultsCount();
+      
+      // Animação de feedback
+      this.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 150);
     });
   }
 
   // Botão aplicar filtros
-  const btnAplicar = document.querySelector('.btn-aplicar-filtros');
+  const btnAplicar = document.querySelector('.btn-aplicar');
   if (btnAplicar) {
     btnAplicar.addEventListener('click', function() {
-      // Aqui você pode implementar a lógica de filtrar os veículos
-      console.log('Aplicando filtros...');
-      
       // Animação de feedback
       this.style.transform = 'scale(0.95)';
       setTimeout(() => {
@@ -216,14 +168,21 @@ function updateResultsCount() {
   const resultadosCount = document.getElementById('resultadosCount');
   if (resultadosCount) {
     // Simular contagem baseada nos filtros ativos
-    const activeFilters = document.querySelectorAll('.filtro-btn.active, .capacity-btn.active, .baggage-btn.active').length;
-    const checkedBoxes = document.querySelectorAll('.filtro-checkboxes input:checked, .extras-grid input:checked').length;
+    const selects = document.querySelectorAll('.filtro-select');
+    const priceRange = document.getElementById('priceRange');
     
-    // Lógica simples para simular resultados
     let count = 12;
-    if (activeFilters > 3) count -= 2;
-    if (checkedBoxes < 3) count -= 1;
-    if (checkedBoxes > 6) count -= 3;
+    
+    // Reduzir contagem baseado nos filtros
+    selects.forEach(select => {
+      if (select.value !== 'todos' && select.value !== 'todas') {
+        count -= Math.floor(Math.random() * 3) + 1;
+      }
+    });
+    
+    if (priceRange && priceRange.value < 300) {
+      count -= Math.floor(Math.random() * 2) + 1;
+    }
     
     count = Math.max(1, count); // Mínimo 1 resultado
     

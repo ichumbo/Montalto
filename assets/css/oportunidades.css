@@ -141,7 +141,7 @@
   margin-bottom: 50px;
   font-size: var(--fs-2);
   font-weight: 700;
-  color: var(--neutral-dark);
+  color: var(--secondary-blue);
   position: relative;
 }
 
@@ -218,7 +218,7 @@
 }
 
 .beneficio-card .card-title {
-  color: var(--neutral-dark);
+  color: var(--secondary-blue);
   font-family: var(--ff-nunito);
   font-weight: var(--fw-600);
   margin-bottom: 15px;
@@ -241,7 +241,7 @@
   margin-bottom: 50px;
   font-size: var(--fs-2);
   font-weight: 700;
-  color: var(--neutral-dark);
+  color: var(--secondary-blue);
   position: relative;
 }
 
@@ -331,6 +331,7 @@
 
 .vaga-requisitos {
   margin-bottom: 25px;
+  text-align: left;
 }
 
 .vaga-requisitos h4 {
@@ -448,7 +449,7 @@
 }
 
 .step-content h3 {
-  color: var(--neutral-dark);
+  color: var(--secondary-blue);
   font-family: var(--ff-nunito);
   font-weight: var(--fw-600);
   margin-bottom: 10px;
@@ -481,7 +482,7 @@
   margin-bottom: 15px;
   font-size: var(--fs-2);
   font-weight: 700;
-  color: var(--neutral-dark);
+  color: var(--secondary-blue);
   position: relative;
 }
 
