@@ -1609,6 +1609,62 @@ button, a { transition: var(--transition); }
   .popup-body {
     padding: 25px 20px;
   }
+  
+  .popup-close {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .btn-reserve,
+  .btn-contact {
+    min-height: 48px;
+    padding: 16px 24px;
+  }
+}
+
+/* MELHORIAS GERAIS DE USABILIDADE */
+@media (max-width: 768px) {
+  /* Botões com área de toque adequada */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .toggle-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .featured-car-link {
+    min-height: 44px;
+    padding: 10px 20px;
+  }
+  
+  .social-bar-link {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Melhor espaçamento entre elementos clicáveis */
+  .featured-car-card {
+    margin-bottom: 10px;
+  }
+  
+  .get-start-card {
+    margin-bottom: 10px;
+  }
+  
+  .why-choose-card {
+    margin-bottom: 10px;
+  }
+  
+  /* Ajustes no formulário hero */
+  .input-field {
+    min-height: 44px;
+  }
 }
 
 
@@ -2164,27 +2220,269 @@ button, a { transition: var(--transition); }
  * responsive for mobile screens
  */
 
-@media (max-width: 575px) {
+/* MOBILE PEQUENO (até 480px) */
+@media (max-width: 480px) {
   .container {
-    padding: 0 10px;
+    padding: 0 15px;
   }
   
   .featured-car .container {
-    padding: 0;
+    padding: 0 15px;
+  }
+  
+  /* HERO */
+  .hero {
+    padding-top: 100px;
+    min-height: 70vh;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .hero-text {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+  
+  .hero-form {
+    margin-top: 30px;
+  }
+  
+  .input-wrapper {
+    padding: 12px 16px;
+  }
+  
+  .input-field {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .hero-form .btn {
+    --height: 48px;
+    font-size: 0.9rem;
+  }
+  
+  /* FEATURED CARS */
+  .featured-car .section-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .featured-car .title-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .view-toggle {
+    order: -1;
+  }
+  
+  .toggle-btn {
+    padding: 10px 12px;
+    min-height: 44px;
+    min-width: 44px;
   }
   
   .featured-car-list {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
   
   .featured-car-card {
+    margin: 0;
+  }
+  
+  .featured-car-card .card-banner {
+    height: 180px;
+  }
+  
+  .featured-car-card .card-content {
+    padding: 20px;
+  }
+  
+  .featured-car-card .card-title {
+    font-size: 1rem;
+  }
+  
+  .featured-car-card .card-list {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  
+  .featured-car-card .card-list-item {
+    font-size: 0.8rem;
+  }
+  
+  .featured-car-card .card-price strong {
+    font-size: 1.5rem;
+  }
+  
+  .featured-car-card .btn-pricing {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+    min-height: 48px;
+  }
+  
+  /* WHY CHOOSE US */
+  .why-choose .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .why-choose-list {
+    gap: 20px;
+  }
+  
+  .why-choose-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .why-choose-card .card-icon {
     margin-bottom: 15px;
   }
   
-  .get-start-list,
-  .why-choose-list,
-  .rental-services-list {
+  /* GET START */
+  .get-start .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .get-start-list {
     gap: 20px;
+  }
+  
+  .get-start-card {
+    height: auto;
+    min-height: 280px;
+    padding: 25px 20px;
+  }
+  
+  .get-start-card .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .get-start-card .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .get-start-card .card-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* BLOG */
+  .blog .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .blog .has-scrollbar > li {
+    max-width: 280px;
+  }
+  
+  .blog-card .card-content {
+    padding: 16px;
+  }
+  
+  .blog-card .card-title {
+    font-size: 1rem;
+  }
+  
+  /* SOCIAL BAR */
+  .social-bar .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .social-bar-text {
+    margin-right: 0;
+    text-align: center;
+  }
+  
+  /* POPUP */
+  .popup-content {
+    width: 95%;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  
+  .popup-header,
+  .popup-body {
+    padding: 20px 15px;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .car-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .popup-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-reserve,
+  .btn-contact {
+    min-height: 48px;
+  }
+}
+
+/* MOBILE MÉDIO (481px - 575px) */
+@media (min-width: 481px) and (max-width: 575px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .featured-car .container {
+    padding: 0 15px;
+  }
+  
+  .hero {
+    min-height: 75vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-text {
+    font-size: 1.2rem;
+  }
+  
+  .featured-car-list {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .featured-car-card .card-banner {
+    height: 200px;
+  }
+  
+  .featured-car-card .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .why-choose-card {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .get-start-list,
+  .why-choose-list {
+    gap: 25px;
   }
 }
 
@@ -2219,14 +2517,41 @@ button, a { transition: var(--transition); }
   .container {
     max-width: 540px;
     margin-inline: auto;
-    padding: 0 15px;
+    padding: 0 20px;
   }
   
   .featured-car .container {
-    padding: 0;
+    padding: 0 20px;
   }
 
+  /**
+   * HERO
+   */
+   
+  .hero {
+    min-height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-text {
+    font-size: 1.3rem;
+  }
 
+  /**
+   * FEATURED CARS
+   */
+   
+  .featured-car-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .featured-car-card .card-banner {
+    height: 220px;
+  }
 
   /**
    * HEADER
@@ -2274,11 +2599,11 @@ button, a { transition: var(--transition); }
 
   .container { 
     max-width: 720px;
-    padding: 0 20px;
+    padding: 0 30px;
   }
   
   .featured-car .container {
-    padding: 0;
+    padding: 0 30px;
   }
 
 
@@ -2366,6 +2691,15 @@ button, a { transition: var(--transition); }
   .featured-car-card .card-banner {
     height: 260px;
   }
+  
+  .featured-car .title-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .view-toggle {
+    order: 0;
+  }
 
 
 
@@ -2382,6 +2716,26 @@ button, a { transition: var(--transition); }
    */
 
   .why-choose-list { grid-template-columns: 1fr 1fr; }
+  
+  .why-choose-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+
+
+  /**
+   * SOCIAL BAR
+   */
+   
+  .social-bar .container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .social-bar-text {
+    margin-right: 20px;
+  }
 
 
 
@@ -2456,6 +2810,10 @@ button, a { transition: var(--transition); }
  * responsive for large than 992px screen
  */
 
+/**
+ * responsive for large than 992px screen
+ */
+
 @media (min-width: 992px) {
 
   /**
@@ -2468,7 +2826,7 @@ button, a { transition: var(--transition); }
   }
   
   .featured-car .container {
-    padding: 0;
+    padding: 0 30px;
   }
 
 
@@ -2478,6 +2836,17 @@ button, a { transition: var(--transition); }
    */
 
   .hero .container { width: 100%; }
+
+
+
+  /**
+   * FEATURED CARS
+   */
+   
+  .featured-car-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
 
 
 
@@ -2535,11 +2904,10 @@ button, a { transition: var(--transition); }
   .container { 
     max-width: 1170px;
     padding: 0 40px;
-    text-align: center;
   }
   
   .featured-car .container {
-    padding: 0;
+    padding: 0 40px;
   }
 
 
@@ -2579,7 +2947,7 @@ button, a { transition: var(--transition); }
 
   .navbar-list {
     display: flex;
-            margin-left: 95px;
+    margin-left: 95px;
     gap: 35px;
   }
 
@@ -2595,7 +2963,10 @@ button, a { transition: var(--transition); }
    * HERO
    */
 
-  .hero { min-height: 100vh; margin-top: 25px;}
+  .hero { 
+    min-height: 100vh; 
+    margin-top: 25px;
+  }
 
   .hero-banner {
     left: auto;

@@ -6,9 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seminovos - Montalvo</title>
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/site.webmanifest">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/unified-styles.css">
   <link rel="stylesheet" href="./assets/css/seminovos.css">
+  <link rel="stylesheet" href="./assets/css/frotas-tarifas.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
@@ -65,72 +71,66 @@
         </div>
       </section>
 
-      <!-- FILTROS -->
-      <section class="filtros-section">
-        <div class="container">
-          <div class="filtros-container">
-            <h2 class="section-title">Encontre seu Seminovo Ideal</h2>
-            
-            <div class="filtros-grid">
-              <div class="filtro-group">
-                <label for="marca">Marca</label>
-                <select id="marca" name="marca">
-                  <option value="">Todas as marcas</option>
-                  <option value="toyota">Toyota</option>
-                  <option value="honda">Honda</option>
-                  <option value="volkswagen">Volkswagen</option>
-                  <option value="ford">Ford</option>
-                  <option value="chevrolet">Chevrolet</option>
-                </select>
-              </div>
-
-              <div class="filtro-group">
-                <label for="preco">Preço até</label>
-                <select id="preco" name="preco">
-                  <option value="">Qualquer preço</option>
-                  <option value="30000">R$ 30.000</option>
-                  <option value="50000">R$ 50.000</option>
-                  <option value="80000">R$ 80.000</option>
-                  <option value="100000">R$ 100.000+</option>
-                </select>
-              </div>
-
-              <div class="filtro-group">
-                <label for="ano">Ano</label>
-                <select id="ano" name="ano">
-                  <option value="">Qualquer ano</option>
-                  <option value="2023">2023</option>
-                  <option value="2022">2022</option>
-                  <option value="2021">2021</option>
-                  <option value="2020">2020</option>
-                </select>
-              </div>
-
-              <div class="filtro-group">
-                <label for="combustivel">Combustível</label>
-                <select id="combustivel" name="combustivel">
-                  <option value="">Qualquer combustível</option>
-                  <option value="flex">Flex</option>
-                  <option value="gasolina">Gasolina</option>
-                  <option value="diesel">Diesel</option>
-                  <option value="eletrico">Elétrico</option>
-                </select>
-              </div>
+      <!-- FILTROS SECTION -->
+    <section class="filtros-section">
+      <div class="container">
+        <div class="filtros-container">
+          <div class="filtros-row">
+            <div class="filtro-item">
+              <select class="filtro-select" data-filter="categoria">
+                <option value="todos">Todas as Categorias</option>
+                <option value="economico">Econômico</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="executivo">Executivo</option>
+                <option value="suv">SUV</option>
+                <option value="premium">Premium</option>
+              </select>
             </div>
             
-            <div class="filtros-actions">
-              <button class="btn-limpar" id="btnLimpar">
+            <div class="filtro-item">
+              <select class="filtro-select" data-filter="transmissao">
+                <option value="todas">Todas as Transmissões</option>
+                <option value="manual">Manual</option>
+                <option value="automatico">Automático</option>
+                <option value="cvt">CVT</option>
+              </select>
+            </div>
+            
+            <div class="filtro-item">
+              <select class="filtro-select" data-filter="pessoas">
+                <option value="todas">Qualquer Capacidade</option>
+                <option value="2">2 pessoas</option>
+                <option value="5">5 pessoas</option>
+                <option value="7">7 pessoas</option>
+                <option value="9">9+ pessoas</option>
+              </select>
+            </div>
+            
+            <div class="filtro-actions">
+              <button class="btn-limpar" title="Limpar Filtros">
                 <ion-icon name="refresh-outline"></ion-icon>
-                Limpar Filtros
               </button>
-              <button class="btn-filtrar" id="btnFiltrar">
+              <button class="btn-aplicar">
                 <ion-icon name="search-outline"></ion-icon>
-                Filtrar
+                Buscar
               </button>
             </div>
           </div>
+          
+          <div class="price-row">
+            <div class="price-filter">
+              <span class="price-label">Preço máximo:</span>
+              <input type="range" id="priceRange" min="50" max="500" value="500" class="price-slider">
+              <span class="price-value">R$ <span id="currentPrice">500</span></span>
+            </div>
+          </div>
+          
+          <div class="resultados-info">
+            <span id="resultadosCount">12 veículos encontrados</span>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <!-- LISTA DE SEMINOVOS -->
       <section class="seminovos-lista">

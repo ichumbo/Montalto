@@ -6,8 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva - Montalvo</title>
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/site.webmanifest">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/unified-styles.css">
   <link rel="stylesheet" href="./assets/css/reserva.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +76,7 @@
           <div class="form-container">
             <div class="form-header">
               <h2 class="section-title">Complete sua Reserva</h2>
+              <p class="section-subtitle">Processo rápido e seguro em apenas 3 etapas</p>
               <div class="progress-bar">
                 <div class="progress-step active" data-step="1">
                   <div class="step-number">1</div>
@@ -93,62 +99,42 @@
               <div class="form-step active" data-step="1">
                 <div class="step-content">
                   <h3 class="step-title">Seus Dados</h3>
+                  <p class="step-description">Preencha suas informações pessoais para iniciarmos sua reserva</p>
                   
                   <div class="form-grid">
                     <div class="input-group">
                       <label for="nome">Nome Completo</label>
                       <input type="text" id="nome" name="nome" required>
-                      <div class="input-icon">
-                        <ion-icon name="person-outline"></ion-icon>
-                      </div>
                     </div>
 
                     <div class="input-group">
                       <label for="email">E-mail</label>
                       <input type="email" id="email" name="email" required>
-                      <div class="input-icon">
-                        <ion-icon name="mail-outline"></ion-icon>
-                      </div>
                     </div>
 
                     <div class="input-group">
                       <label for="telefone">Telefone</label>
                       <input type="tel" id="telefone" name="telefone" required>
-                      <div class="input-icon">
-                        <ion-icon name="call-outline"></ion-icon>
-                      </div>
                     </div>
 
                     <div class="input-group">
                       <label for="cpf">CPF</label>
                       <input type="text" id="cpf" name="cpf" required>
-                      <div class="input-icon">
-                        <ion-icon name="card-outline"></ion-icon>
-                      </div>
                     </div>
 
                     <div class="input-group full-width">
                       <label for="endereco">Endereço</label>
                       <input type="text" id="endereco" name="endereco" required>
-                      <div class="input-icon">
-                        <ion-icon name="location-outline"></ion-icon>
-                      </div>
                     </div>
 
                     <div class="input-group">
                       <label for="dataRetirada">Data de Retirada</label>
                       <input type="date" id="dataRetirada" name="dataRetirada" required>
-                      <div class="input-icon">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                      </div>
                     </div>
 
                     <div class="input-group">
                       <label for="dataDevolucao">Data de Devolução</label>
                       <input type="date" id="dataDevolucao" name="dataDevolucao" required>
-                      <div class="input-icon">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -158,6 +144,7 @@
               <div class="form-step" data-step="2">
                 <div class="step-content">
                   <h3 class="step-title">Escolha seu Veículo</h3>
+                  <p class="step-description">Selecione o veículo ideal para sua viagem e adicione extras opcionais</p>
                   
                   <div class="vehicle-grid">
                     <div class="vehicle-card" data-vehicle="economico">
@@ -209,6 +196,146 @@
                     </div>
                   </div>
 
+                  <!-- EXTRAS OPCIONAIS -->
+                  <div class="extras-section">
+                    <h4>Extras Opcionais</h4>
+                    <div class="extras-grid">
+                      <label class="extra-item">
+                        <input type="checkbox" name="extras" value="gps">
+                        <div class="extra-content">
+                          <ion-icon name="navigate-outline"></ion-icon>
+                          <span>GPS</span>
+                          <small>+R$ 15/dia</small>
+                        </div>
+                      </label>
+
+                      <label class="extra-item">
+                        <input type="checkbox" name="extras" value="cadeirinha">
+                        <div class="extra-content">
+                          <ion-icon name="person-outline"></ion-icon>
+                          <span>Cadeirinha</span>
+                          <small>+R$ 20/dia</small>
+                        </div>
+                      </label>
+
+                      <label class="extra-item">
+                        <input type="checkbox" name="extras" value="seguro-premium">
+                        <div class="extra-content">
+                          <ion-icon name="shield-checkmark-outline"></ion-icon>
+                          <span>Seguro Premium</span>
+                          <small>+R$ 35/dia</small>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: CONFIRMAÇÃO -->
+              <div class="form-step" data-step="3">
+                <div class="step-content">
+                  <h3 class="step-title">Confirmação</h3>
+                  <p class="step-description">Revise os dados da sua reserva e escolha a forma de pagamento</p>
+                  
+                  <div class="confirmation-summary">
+                    <div class="summary-card">
+                      <h4>Resumo da Reserva</h4>
+                      <div class="summary-item">
+                        <span>Veículo:</span>
+                        <span id="selectedVehicle">-</span>
+                      </div>
+                      <div class="summary-item">
+                        <span>Período:</span>
+                        <span id="rentalPeriod">-</span>
+                      </div>
+                      <div class="summary-item">
+                        <span>Dias:</span>
+                        <span id="totalDays">-</span>
+                      </div>
+                      <div class="summary-item">
+                        <span>Extras:</span>
+                        <span id="selectedExtras">Nenhum</span>
+                      </div>
+                      <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="totalPrice">R$ 0</span>
+                      </div>
+                    </div>
+
+                    <div class="payment-methods">
+                      <h4>Forma de Pagamento</h4>
+                      <div class="payment-options">
+                        <label class="payment-option">
+                          <input type="radio" name="pagamento" value="cartao" required>
+                          <div class="payment-content">
+                            <ion-icon name="card-outline"></ion-icon>
+                            <span>Cartão de Crédito</span>
+                          </div>
+                        </label>
+
+                        <label class="payment-option">
+                          <input type="radio" name="pagamento" value="pix" required>
+                          <div class="payment-content">
+                            <ion-icon name="flash-outline"></ion-icon>
+                            <span>PIX</span>
+                          </div>
+                        </label>
+
+                        <label class="payment-option">
+                          <input type="radio" name="pagamento" value="boleto" required>
+                          <div class="payment-content">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                            <span>Boleto Bancário</span>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NAVEGAÇÃO DO FORMULÁRIO -->
+              <div class="form-navigation">
+                <button type="button" class="btn-nav btn-prev" id="prevBtn" style="display: none;">
+                  <ion-icon name="arrow-back-outline"></ion-icon>
+                  Voltar
+                </button>
+                <button type="button" class="btn-nav btn-next" id="nextBtn">
+                  Próximo
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+                <button type="submit" class="btn-nav btn-submit" id="submitBtn" style="display: none;">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                  Confirmar Reserva
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Montalvo. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/reserva.js"></script>
+
+</body>
+</html>"premium">
+                    </div>
+                  </div>
+
                   <div class="extras-section">
                     <h4>Extras Opcionais</h4>
                     <div class="extras-grid">
@@ -247,6 +374,7 @@
               <div class="form-step" data-step="3">
                 <div class="step-content">
                   <h3 class="step-title">Confirmação da Reserva</h3>
+                  <p class="step-description">Revise todos os detalhes e escolha sua forma de pagamento</p>
                   
                   <div class="confirmation-summary">
                     <div class="summary-card">
@@ -300,15 +428,15 @@
               <div class="form-navigation">
                 <button type="button" class="btn-nav btn-prev" id="prevBtn" style="display: none;">
                   <ion-icon name="chevron-back-outline"></ion-icon>
-                  Anterior
+                  <span>Anterior</span>
                 </button>
                 <button type="button" class="btn-nav btn-next" id="nextBtn">
-                  Próximo
+                  <span>Próximo</span>
                   <ion-icon name="chevron-forward-outline"></ion-icon>
                 </button>
                 <button type="submit" class="btn-nav btn-submit" id="submitBtn" style="display: none;">
                   <ion-icon name="checkmark-outline"></ion-icon>
-                  Confirmar Reserva
+                  <span>Confirmar Reserva</span>
                 </button>
               </div>
             </form>

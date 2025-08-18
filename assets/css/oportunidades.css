@@ -632,54 +632,266 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+
+/* CONTAINER RESPONSIVO */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* MOBILE PEQUENO (até 480px) */
+@media (max-width: 480px) {
+  .hero-oportunidades {
+    padding: 80px 0 50px;
+    min-height: 50vh;
+  }
+  
+  .hero-oportunidades .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .hero-oportunidades .hero-text {
+    font-size: 1.1rem;
+  }
+  
+  .hero-oportunidades .hero-badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .por-que-trabalhar {
+    padding: 60px 0;
+  }
+  
+  .por-que-trabalhar .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .beneficio-card {
+    padding: 25px 20px;
+  }
+  
+  .beneficio-card .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .beneficio-card .card-icon ion-icon {
+    font-size: 28px;
+  }
+  
+  .beneficio-card .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .vagas-disponiveis {
+    padding: 60px 0;
+  }
+  
+  .vagas-disponiveis .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .vaga-card {
+    padding: 25px 20px;
+  }
+  
+  .vaga-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .vaga-titulo {
+    font-size: 1.2rem;
+  }
+  
+  .vaga-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .info-item {
+    font-size: 0.9rem;
+  }
+  
+  .btn-candidatar {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
+  
+  .processo-seletivo {
+    padding: 60px 0;
+  }
+  
+  .processo-seletivo .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .processo-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .step-item {
+    padding: 25px 20px;
+  }
+  
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .formulario-candidatura {
+    padding: 60px 0;
+  }
+  
+  .formulario-candidatura .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-container {
+    padding: 25px 15px;
+    margin: 0 15px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    min-height: 48px;
+  }
+  
+  .input-group textarea {
+    min-height: 120px;
+  }
+  
+  .file-upload-label {
+    padding: 14px 16px;
+    min-height: 48px;
+  }
+  
+  .btn-enviar {
+    padding: 16px 24px;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+}
+
+/* MOBILE MÉDIO (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
   .hero-oportunidades {
     padding: 100px 0 60px;
   }
   
   .hero-oportunidades .hero-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
-  .hero-oportunidades .hero-stats {
-    gap: 20px;
+  .por-que-trabalhar {
+    padding: 70px 0;
   }
   
   .beneficios-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .vagas-disponiveis {
+    padding: 70px 0;
+  }
+  
+  .vaga-header {
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .vaga-info {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .processo-seletivo {
+    padding: 70px 0;
   }
   
   .processo-steps {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .formulario-candidatura {
+    padding: 70px 0;
   }
   
   .form-container {
-    padding: 30px 20px;
+    padding: 35px 25px;
   }
   
   .form-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
-@media (min-width: 768px) {
+/* TABLET (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-oportunidades {
+    padding: 120px 0 80px;
+  }
+  
+  .por-que-trabalhar,
+  .vagas-disponiveis,
+  .processo-seletivo,
+  .formulario-candidatura {
+    padding: 80px 0;
+  }
+  
   .beneficios-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
   
   .processo-steps {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 
+/* DESKTOP PEQUENO (1025px - 1199px) */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .beneficios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .processo-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* DESKTOP GRANDE (1200px+) */
 @media (min-width: 1200px) {
   .beneficios-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -687,5 +899,43 @@
   
   .processo-steps {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* MELHORIAS GERAIS DE USABILIDADE */
+@media (max-width: 768px) {
+  /* Botões com área de toque adequada */
+  .btn-candidatar {
+    min-height: 48px;
+    padding: 14px 20px;
+  }
+  
+  .btn-enviar {
+    min-height: 48px;
+    padding: 16px 24px;
+  }
+  
+  /* Melhor espaçamento entre elementos clicáveis */
+  .vaga-card {
+    margin-bottom: 10px;
+  }
+  
+  .beneficio-card {
+    margin-bottom: 10px;
+  }
+  
+  .step-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Ajustes nos campos de formulário */
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    min-height: 44px;
+  }
+  
+  .file-upload-label {
+    min-height: 44px;
   }
 }
